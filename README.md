@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="assets/badges/paper.svg" alt="Paper: included">
+  <a href="https://arxiv.org/abs/2611.25927">
+    <img src="assets/badges/paper.svg" alt="Paper: arXiv">
+  </a>
   <img src="assets/badges/code.svg" alt="Code: coming soon">
 </p>
 
@@ -23,7 +25,7 @@ This retains intermediate predictions where action construction needs them while
 
 ## Release status
 
-**This repository currently contains the paper, figures, and project documentation. The research implementation, checkpoints, and benchmark assets are not included yet.** The paper is available on [arXiv](https://arxiv.org/abs/2611.25927), and the code will be made publicly available soon; no release date is announced here.
+**This repository currently contains figures and project documentation. The research implementation, checkpoints, and benchmark assets are not included yet.** The paper is available on [arXiv](https://arxiv.org/abs/2611.25927), and the code will be made publicly available soon; no release date is announced here.
 
 Installation, training, and evaluation commands will be documented with the implementation release. Results below are reported in the paper and have not been reproduced by this documentation repository.
 
@@ -74,23 +76,21 @@ Fast-JEPA/
 ├── .github/
 │   ├── CONTRIBUTING.md
 │   └── SUPPORT.md
-├── assets/
-│   ├── logo.png
-│   ├── badges/
-│   │   ├── code.svg
-│   │   └── paper.svg
-│   └── figures/
-│       ├── method-overview.pdf
-│       ├── method-overview.svg
-│       ├── success-latency.pdf
-│       └── success-latency.svg
-└── paper/
-    └── CITATION.bib
+└── assets/
+    ├── logo.png
+    ├── badges/
+    │   ├── code.svg
+    │   └── paper.svg
+    └── figures/
+        ├── method-overview.pdf
+        ├── method-overview.svg
+        ├── success-latency.pdf
+        └── success-latency.svg
 ```
 
 ## Citation
 
-The following entry cites the paper available on [arXiv](https://arxiv.org/abs/2611.25927) and is also available in [CITATION.bib](paper/CITATION.bib).
+If you find our work useful, please consider citing:
 
 ```bibtex
 @misc{zhang2026fastjepa,

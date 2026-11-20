@@ -1,16 +1,34 @@
 <p align="center">
-  <img src="assets/badges/paper.svg" alt="Paper: included">
+  <img src="assets/badges/paper.svg" alt="Paper: arXiv">
   <img src="assets/badges/code.svg" alt="Code: coming soon">
 </p>
 
-<p align="center"><img src="assets/logo.png" width="640" alt="Fast-JEPA: fast goal-directed planning"></p>
-<p align="center"><strong>Advancing the Success–Latency Frontier for Latent World Models</strong></p>
-<p align="center">Goal-directed proposals and direct terminal predictions for low-latency visual planning.</p>
 <p align="center">
-Yao Zhang · Bin Yu · Shijie Lian · Haishan Liu · Changti Wu · Yu Wu<sup>†</sup> · Kai Chen<sup>†</sup><br>
-<sub>† Corresponding author</sub>
+  <img src="assets/logo.png" width="640" alt="Fast-JEPA: fast goal-directed planning">
 </p>
-<p align="center"><a href="paper/Fast-JEPA.pdf">Paper (PDF)</a> · <a href="#method">Method</a> · <a href="#results">Results</a> · <a href="#dynagoal">DynaGoal</a> · <a href="#citation">Citation</a></p>
+
+<p align="center">
+  <strong>Advancing the Success–Latency Frontier for Latent World Models</strong>
+</p>
+
+<p align="center">
+  Goal-directed proposals and direct terminal predictions for low-latency visual planning.
+</p>
+
+<p align="center">
+  Yao Zhang · Bin Yu · Shijie Lian · Haishan Liu · Changti Wu<br>
+  Yu Wu<sup>†</sup> · Kai Chen<sup>†</sup><br>
+  <sub>† Corresponding author</sub>
+</p>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2611.25927">arXiv</a> ·
+  <a href="https://arxiv.org/pdf/2611.25927">Paper (PDF)</a> ·
+  <a href="#method">Method</a> ·
+  <a href="#results">Results</a> ·
+  <a href="#dynagoal">DynaGoal</a> ·
+  <a href="#citation">Citation</a>
+</p>
 
 ---
 
@@ -20,22 +38,28 @@ Comparing action sequences through recursive world-model rollout can make online
 
 This retains intermediate predictions where action construction needs them while avoiding recursive state rollout during candidate evaluation.
 
-## Release status
+## Release Status
 
-**This repository currently contains the paper, figures, and project documentation. The research implementation, checkpoints, and benchmark assets are not included yet.** The paper states that code will be made publicly available soon; no release date is announced here.
+**Our paper is now available on [arXiv](https://arxiv.org/abs/2611.25927). The source code will be released soon.**
 
-Installation, training, and evaluation commands will be documented with the implementation release. Results below are reported in the paper and have not been reproduced by this documentation repository.
+This repository currently contains the paper, figures, and project documentation. The research implementation, checkpoints, and benchmark assets are not yet publicly available.
+
+Installation, training, and evaluation instructions will be provided with the code release.
 
 ## Method
 
-<p align="center"><a href="assets/figures/method-overview.pdf"><img src="assets/figures/method-overview.svg" width="100%" alt="Fast-JEPA pipeline: observation and goal encoding, sequential action proposal, light CEM, direct terminal predictions, goal scoring, and execution"></a></p>
+<p align="center">
+  <a href="assets/figures/method-overview.pdf">
+    <img src="assets/figures/method-overview.svg" width="100%" alt="Fast-JEPA pipeline: observation and goal encoding, sequential action proposal, lightweight CEM, direct terminal prediction, goal scoring, and execution">
+  </a>
+</p>
 
 1. **Encode the current observation and visual goal.** Represent both in a shared latent space.
 2. **Construct a goal-directed proposal.** Sequential action construction uses intermediate predictions anchored to the current observed representation.
 3. **Refine with lightweight CEM.** Sample alternatives around the proposal and score complete candidates with batched terminal queries. The proposal and best-so-far plan remain eligible.
 4. **Select, execute, and replan.** Select the lowest goal-cost plan, execute a short action prefix, and replan from the next observation.
 
-Both intermediate and terminal predictions use the same forward world model. See the [method figure in vector format](assets/figures/method-overview.pdf) and the [paper](paper/Fast-JEPA.pdf) for the full formulation.
+Both intermediate and terminal predictions use the same forward world model. See the [method figure in vector format](assets/figures/method-overview.pdf) and the [arXiv paper](https://arxiv.org/abs/2611.25927) for the full formulation.
 
 ## Results
 
@@ -51,7 +75,11 @@ Fast-JEPA reaches **96.50%** average success at **10.88 ms** mean complete plann
 
 The main evaluation uses 100 episodes per task and three independently trained models. Latencies are warmed, batch-one, complete planning measurements on an NVIDIA RTX PRO 6000 Blackwell Server Edition. Hardware, timing boundaries, model configurations, and protocols matter when comparing results; published reference results are distinguished from local evaluations in the full paper.
 
-<p align="center"><a href="assets/figures/success-latency.pdf"><img src="assets/figures/success-latency.svg" width="580" alt="Paper Figure 1: success-latency frontier with published and locally evaluated configurations distinguished"></a></p>
+<p align="center">
+  <a href="assets/figures/success-latency.pdf">
+    <img src="assets/figures/success-latency.svg" width="580" alt="Paper Figure 1: success-latency frontier with published and locally evaluated configurations distinguished">
+  </a>
+</p>
 
 ## DynaGoal
 
@@ -65,7 +93,7 @@ The main evaluation uses 100 episodes per task and three independently trained m
 
 Shift and Deadline values are from Tables 2 and 3. Each protocol covers PushT, Reacher, Cube, and TwoRoom. OOD here refers to changed control conditions and execution constraints, rather than visual-domain or episode disjointness. See Appendix B.2 for case definitions, success criteria, and timing boundaries.
 
-## Repository contents
+## Repository Contents
 
 ```text
 Fast-JEPA/
@@ -90,18 +118,23 @@ Fast-JEPA/
 
 ## Citation
 
-The following entry cites the supplied manuscript and is also available in [CITATION.bib](paper/CITATION.bib). Update it with the public arXiv identifier and URL once assigned.
+If you find Fast-JEPA useful in your research, please consider citing our paper:
 
 ```bibtex
 @misc{zhang2026fastjepa,
-  title  = {Fast-JEPA: Advancing the Success--Latency Frontier for Latent World Models},
-  author = {Zhang, Yao and Yu, Bin and Lian, Shijie and Liu, Haishan and Wu, Changti and Wu, Yu and Chen, Kai},
-  year   = {2026},
-  note   = {Manuscript; public identifier pending}
+  title         = {Fast-JEPA: Advancing the Success--Latency Frontier for Latent World Models},
+  author        = {Zhang, Yao and Yu, Bin and Lian, Shijie and Liu, Haishan and Wu, Changti and Wu, Yu and Chen, Kai},
+  year          = {2026},
+  eprint        = {2611.25927},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2611.25927}
 }
 ```
 
-## Contributing and support
+The BibTeX entry is also available in [CITATION.bib](paper/CITATION.bib).
+
+## Contributing and Support
 
 For now, contributions focus on documentation corrections and questions about the paper. See [contribution guidance](.github/CONTRIBUTING.md) and [support information](.github/SUPPORT.md). Implementation-related instructions will be added when the code is released.
 

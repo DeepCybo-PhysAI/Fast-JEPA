@@ -1,133 +1,96 @@
 <p align="center">
-  <img src="assets/badges/paper.svg" alt="Paper: arXiv">
+  <img src="assets/badges/paper.svg" alt="Paper: included">
   <img src="assets/badges/code.svg" alt="Code: coming soon">
 </p>
 
+<p align="center"><img src="assets/logo.png" width="640" alt="Fast-JEPA: fast goal-directed planning"></p>
+<p align="center"><strong>Advancing the Success–Latency Frontier for Latent World Models</strong></p>
+<p align="center">Goal-directed proposals and direct terminal predictions for low-latency visual planning.</p>
 <p align="center">
-  <img src="assets/logo.png" width="640" alt="Fast-JEPA">
+Yao Zhang · Bin Yu · Shijie Lian · Haishan Liu · Changti Wu · Yu Wu<sup>†</sup> · Kai Chen<sup>†</sup><br>
+<sub>† Corresponding author</sub>
 </p>
 
-<p align="center">
-  <strong>Advancing the Success–Latency Frontier for Latent World Models</strong>
-</p>
-
-<p align="center">
-  Goal-directed proposals and direct terminal predictions for low-latency visual planning.
-</p>
-
-<p align="center">
-  Yao Zhang · Bin Yu · Shijie Lian · Haishan Liu · Changti Wu<br>
-  Yu Wu<sup>†</sup> · Kai Chen<sup>†</sup><br>
-  <sub>† Corresponding author</sub>
-</p>
-
-<p align="center">
-  <a href="https://arxiv.org/abs/2611.25927">Paper</a> ·
-  <a href="#method">Method</a> ·
-  <a href="#results">Results</a> ·
-  <a href="#dynagoal">DynaGoal</a> ·
-  <a href="#citation">Citation</a>
-</p>
+<p align="center"><a href="https://arxiv.org/abs/2611.25927">Paper</a> · <a href="#method">Method</a> · <a href="#results">Results</a> · <a href="#dynagoal">DynaGoal</a> · <a href="#citation">Citation</a></p>
 
 ---
 
 ## Overview
 
-Latent world models predict the outcomes of action sequences, but comparing candidate plans through recursive rollout remains expensive at test time.
+Comparing action sequences through recursive world-model rollout can make online planning expensive. **Fast-JEPA** reorganizes predictive computation: it constructs a goal-directed reference plan, then compares complete candidate sequences through direct terminal predictions under a shared visual-goal objective.
 
-**Fast-JEPA** is a latent world model planning framework that advances the **success–latency frontier** of predictive search. It reorganizes predictive computation into two complementary stages:
+This retains intermediate predictions where action construction needs them while avoiding recursive state rollout during candidate evaluation.
 
-- **Goal-directed proposal:** Construct an action sequence using intermediate predictions to guide action selection.
-- **Direct terminal evaluation:** Predict the outcomes of complete candidate sequences directly, avoiding recursive state rollout during refinement.
+## Release status
 
-By using predictions differently across planning stages, Fast-JEPA enables efficient action-sequence search while maintaining competitive task success.
+**This repository currently contains the paper, figures, and project documentation. The research implementation, checkpoints, and benchmark assets are not included yet.** The paper is available on [arXiv](https://arxiv.org/abs/2611.25927), and the code will be made publicly available soon; no release date is announced here.
 
-## News
-
-- **November 2026:** Fast-JEPA is available on [arXiv](https://arxiv.org/abs/2611.25927).
-- **Coming soon:** Source code, pretrained checkpoints, and evaluation instructions.
+Installation, training, and evaluation commands will be documented with the implementation release. Results below are reported in the paper and have not been reproduced by this documentation repository.
 
 ## Method
 
-<p align="center">
-  <a href="assets/figures/method-overview.pdf">
-    <img src="assets/figures/method-overview.svg" width="100%" alt="Fast-JEPA method overview">
-  </a>
-</p>
+<p align="center"><a href="assets/figures/method-overview.pdf"><img src="assets/figures/method-overview.svg" width="100%" alt="Fast-JEPA pipeline: observation and goal encoding, sequential action proposal, light CEM, direct terminal predictions, goal scoring, and execution"></a></p>
 
-Fast-JEPA separates action-sequence planning into proposal construction and candidate refinement.
+1. **Encode the current observation and visual goal.** Represent both in a shared latent space.
+2. **Construct a goal-directed proposal.** Sequential action construction uses intermediate predictions anchored to the current observed representation.
+3. **Refine with lightweight CEM.** Sample alternatives around the proposal and score complete candidates with batched terminal queries. The proposal and best-so-far plan remain eligible.
+4. **Select, execute, and replan.** Select the lowest goal-cost plan, execute a short action prefix, and replan from the next observation.
 
-1. **Visual representation.** Encode the current observation and visual goal into a shared latent space.
-2. **Goal-directed proposal.** Sequentially construct an action sequence using intermediate world-model predictions and goal-conditioned action generation.
-3. **Efficient refinement.** Apply lightweight Cross-Entropy Method (CEM) search around the proposal, evaluating complete candidate sequences through direct terminal predictions.
-4. **Execution and replanning.** Select the lowest-cost candidate, execute the selected action sequence according to the planning horizon, and replan from subsequent observations.
-
-Both intermediate and terminal predictions are produced by the same forward world model. The key distinction lies in how predictions are used: intermediate predictions support action construction, while terminal predictions enable efficient candidate comparison.
-
-For technical details, see our [paper](https://arxiv.org/abs/2611.25927).
+Both intermediate and terminal predictions use the same forward world model. See the [method figure in vector format](assets/figures/method-overview.pdf) and the [paper](https://arxiv.org/abs/2611.25927) for the full formulation.
 
 ## Results
 
-### Main Results
+Main four-task comparison, from Table 1. Values are mean ± standard deviation as reported in the paper; task columns and average success rate (SR) are percentages. These rows are **locally evaluated reference configurations**.
 
-Fast-JEPA is evaluated on four goal-conditioned visual control tasks: **PushT, Reacher, Cube, and TwoRoom**.
-
-| Method | PushT | Reacher | Cube | TwoRoom | Avg. SR (%) | Latency (ms) |
+| Method | PushT | Reacher | Cube | TwoRoom | Avg. SR (%) | Planning latency (ms) |
 | :-- | --: | --: | --: | --: | --: | --: |
 | INTACT | 87.33 ± 2.31 | 96.00 ± 0.00 | 100.00 ± 0.00 | 99.00 ± 0.00 | 95.58 ± 0.58 | 26.19 ± 0.22 |
 | INTACT Guarded A | 91.33 ± 1.53 | 97.00 ± 0.00 | 99.67 ± 0.58 | 97.33 ± 0.58 | 96.33 ± 0.38 | 127.09 ± 2.81 |
 | **Fast-JEPA** | **90.00 ± 3.00** | **96.33 ± 1.15** | **100.00 ± 0.00** | **99.67 ± 0.58** | **96.50 ± 0.66** | **10.88 ± 0.04** |
 
-Fast-JEPA achieves **96.50% average success rate** with **10.88 ms planning latency**, providing a **2.41× speedup** over the locally evaluated INTACT baseline.
+Fast-JEPA reaches **96.50%** average success at **10.88 ms** mean complete planning latency, a **2.41×** speedup over the locally evaluated INTACT configuration (26.19 / 10.88).
 
-Results are reported as mean ± standard deviation across three independently trained models, with 100 evaluation episodes per task and model. Latency represents complete planning time measured on an NVIDIA RTX PRO 6000 Blackwell Server Edition.
+The main evaluation uses 100 episodes per task and three independently trained models. Latencies are warmed, batch-one, complete planning measurements on an NVIDIA RTX PRO 6000 Blackwell Server Edition. Hardware, timing boundaries, model configurations, and protocols matter when comparing results; published reference results are distinguished from local evaluations in the full paper.
 
-### Success–Latency Frontier
-
-<p align="center">
-  <a href="assets/figures/success-latency.pdf">
-    <img src="assets/figures/success-latency.svg" width="680" alt="Success-latency frontier of Fast-JEPA">
-  </a>
-</p>
-
-Fast-JEPA maintains competitive success rates at substantially lower planning latency across varying search budgets, advancing the success–latency frontier of latent world-model planning.
+<p align="center"><a href="assets/figures/success-latency.pdf"><img src="assets/figures/success-latency.svg" width="580" alt="Paper Figure 1: success-latency frontier with published and locally evaluated configurations distinguished"></a></p>
 
 ## DynaGoal
 
-We introduce **DynaGoal**, a benchmark designed to evaluate world-model planning under dynamic out-of-distribution control conditions, execution deadlines, and controlled response delays.
+**DynaGoal** evaluates original-task models under changing control conditions and timing constraints, without benchmark-specific training or fine-tuning.
 
-DynaGoal consists of three evaluation protocols:
-
-- **Shift:** Evaluates adaptation to changing goals or environment configurations during execution.
-- **Deadline:** Evaluates goal completion under time budgets that include both planning and action execution.
-- **Delay:** Evaluates robustness to controlled planning response delays.
-
-All protocols evaluate models trained on the original tasks without benchmark-specific fine-tuning.
-
-| Protocol | Evaluation Setting | Fast-JEPA Avg. SR (%) | Latency (ms) |
+| Protocol | What changes | Fast-JEPA avg. SR (%) | Planning latency (ms) |
 | :-- | :-- | --: | --: |
-| Shift | Dynamic goal and environment changes | 73.83 ± 4.16 | 13.42 ± 0.11 |
-| Deadline | Planning and execution time constraints | 87.67 ± 0.38 | 13.75 ± 0.03 |
-| Delay | Response delays: 0 / 300 / 500 / 800 ms | See paper | See paper |
+| Shift | Goals or environment geometry change during control | 73.83 ± 4.16 | 13.42 ± 0.11 |
+| Deadline | Goal completion must fit planning + execution budgets | 87.67 ± 0.38 | 13.75 ± 0.03 |
+| Delay | Controlled response delays of 0, 300, 500, and 800 ms | See paper curves | See paper |
 
-Fast-JEPA achieves **73.83%** average success on DynaGoal-Shift and **87.67%** on DynaGoal-Deadline.
+Shift and Deadline values are from Tables 2 and 3. Each protocol covers PushT, Reacher, Cube, and TwoRoom. OOD here refers to changed control conditions and execution constraints, rather than visual-domain or episode disjointness. See Appendix B.2 for case definitions, success criteria, and timing boundaries.
 
-For complete benchmark definitions and evaluation protocols, refer to the [paper](https://arxiv.org/abs/2611.25927).
+## Repository contents
 
-## Code Release
-
-The official implementation of Fast-JEPA will be released soon.
-
-The release is planned to include:
-
-- Training and evaluation code
-- Model configurations and pretrained checkpoints
-- Benchmark and evaluation instructions
-- Reproduction scripts for the main experiments
+```text
+Fast-JEPA/
+├── README.md
+├── .github/
+│   ├── CONTRIBUTING.md
+│   └── SUPPORT.md
+├── assets/
+│   ├── logo.png
+│   ├── badges/
+│   │   ├── code.svg
+│   │   └── paper.svg
+│   └── figures/
+│       ├── method-overview.pdf
+│       ├── method-overview.svg
+│       ├── success-latency.pdf
+│       └── success-latency.svg
+└── paper/
+    └── CITATION.bib
+```
 
 ## Citation
 
-If you find our work useful, please consider citing:
+The following entry cites the paper available on [arXiv](https://arxiv.org/abs/2611.25927) and is also available in [CITATION.bib](paper/CITATION.bib).
 
 ```bibtex
 @misc{zhang2026fastjepa,
@@ -141,6 +104,10 @@ If you find our work useful, please consider citing:
 }
 ```
 
+## Contributing and support
+
+For now, contributions focus on documentation corrections and questions about the paper. See [contribution guidance](.github/CONTRIBUTING.md) and [support information](.github/SUPPORT.md). Implementation-related instructions will be added when the code is released.
+
 ## License
 
-License information will be provided with the code release.
+A public redistribution license has not yet been selected for this repository. No open-source license grant is asserted by this project package. The maintainers should choose a license and verify the rights for included materials before public release; paper and code licensing may differ.

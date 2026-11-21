@@ -77,3 +77,48 @@ for (const event of ['pointerdown', 'keydown']) {
     if (!e.target.closest('video,button,a')) synchronizeAll();
   });
 }
+
+// Cues are driven by decoded video time, including native seeking and loops.
+for (const card of document.querySelectorAll('[data-shift]')) {
+  const video = card.querySelector('video');
+  const kind = card.dataset.shift;
+  const indicator = card.querySelector('.shift-indicator');
+  const status = card.querySelector('[data-shift-status]');
+  const clock = card.querySelector('[data-shift-clock]');
+  const fill = card.querySelector('.shift-track-fill');
+  const tick = card.querySelector('.shift-event-tick');
+  const fps = {cube:20,reacher:25,pusht:10,tworoom:10}[kind];
+  const eventTime = {cube:1.25,reacher:3,pusht:5.1,tworoom:5}[kind];
+  function update(mediaTime = video.currentTime) {
+    const t = Math.min(100 / fps, Math.floor((mediaTime + 0.00001) * fps) / fps);
+    const after = t >= eventTime;
+    clock.textContent = `${t.toFixed(2)} s`;
+    fill.style.width = `${Math.min(100, mediaTime / (video.duration || 100 / fps) * 100)}%`;
+    tick.style.left = `${eventTime / (video.duration || 101 / fps) * 100}%`;
+    card.classList.toggle('is-shifted', after && kind !== 'tworoom');
+    indicator.classList.toggle('is-event', after && t < eventTime + .8);
+    indicator.dataset.phase = kind === 'tworoom' ? 'moving' : after ? 'after' : 'before';
+    if (kind === 'cube' || kind === 'reacher') {
+      status.textContent = after ? 'GOAL SWITCHED · A → B' : 'Goal A · switch ahead';
+      card.querySelector('.goal-label text').textContent = after ? 'GOAL B · NEW TARGET' : 'GOAL A';
+    } else if (kind === 'pusht') {
+      status.textContent = after ? 'DRIFT REVERSED ↗' : 'External drift ↙';
+      card.querySelector('.drift-arrow path').setAttribute('transform', after ? 'rotate(180)' : 'rotate(0)');
+    } else {
+      const offset = 8 * Math.sin(2 * Math.PI * t / 20);
+      const down = t < 5;
+      status.textContent = `Door ${down ? '↓' : '↑'} · offset +${Math.max(0,offset).toFixed(1)} px`;
+      // Native doorway center 49, half-width 14, in a 224 px world.
+      // The renderer maps each scene to 768 px with a 54 px top label.
+      const y = 54 + (49 - 14 + offset) * 768 / 224;
+      card.querySelectorAll('.door-highlight').forEach(rect => rect.setAttribute('y', y.toFixed(2)));
+      card.querySelectorAll('.door-motion-arrow').forEach(arrow => arrow.setAttribute('transform', down ? '' : 'translate(0 440) scale(1 -1)'));
+    }
+  }
+  update();
+  for (const event of ['loadedmetadata','seeked','timeupdate','play','pause']) video.addEventListener(event, () => update());
+  if ('requestVideoFrameCallback' in video) {
+    const onFrame = (_, metadata) => { update(metadata.mediaTime); video.requestVideoFrameCallback(onFrame); };
+    video.requestVideoFrameCallback(onFrame);
+  }
+}

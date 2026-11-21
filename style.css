@@ -36,3 +36,14 @@ video{aspect-ratio:1560/900}
 .grid{column-gap:48px;row-gap:42px}
 @media(max-width:900px) and (min-width:651px){.grid{column-gap:32px;row-gap:36px}}
 @media(max-width:650px){.grid{row-gap:34px}}
+
+/* Readable research text and a wait-progress meter beside the countdown. */
+.authors{font-size:18px}.institutions{font-size:15px;color:#343b43}.correspondence{font-size:14px;color:#4b5563}
+.section-intro>p:last-child{font-size:17px;line-height:1.75;color:#303944}h4{font-size:21px}.case-heading span{font-size:14px;color:#4b5563;font-weight:600}
+figcaption{font-size:16px;line-height:1.65;color:#374151;padding-top:12px}.outcome{font-weight:600;color:#303944}
+.shift-indicator{min-height:94px;padding:13px 14px}.shift-status{display:grid;grid-template-columns:9px minmax(0,1fr) auto;gap:8px}.shift-status strong{font-size:17px;line-height:1.5}.shift-clock{font-size:14px;font-weight:600}.shift-indicator p{font-size:14px;line-height:1.6;margin-top:5px}
+.delay-indicator{min-height:150px;padding:13px 14px}.delay-status{flex-wrap:wrap;gap:8px 12px}.delay-status strong{font-size:16px;line-height:1.5;flex:1 1 155px}.delay-countdown{display:flex;align-items:center;gap:10px;flex:0 1 190px}.delay-count{font-size:24px;min-width:88px;text-align:right;line-height:1.4}.delay-wait-progress{height:12px;flex:1;min-width:70px;overflow:hidden;border-radius:7px;background:#e8cf9f;border:1px solid #be8a38}.delay-wait-progress>span{display:block;width:0;height:100%;background:#a95100}.delay-indicator[data-phase="active"] .delay-wait-progress{background:#c0e4d6;border-color:#348c71}.delay-indicator[data-phase="active"] .delay-wait-progress>span{background:#08705d}
+.delay-pipeline{font-size:14px;gap:5px;margin:10px 0 7px;flex-wrap:wrap;white-space:normal}.delay-pipeline span[data-delay-stage]{padding:3px 6px}.delay-indicator p{font-size:14px;line-height:1.6;margin-top:5px}.delay-timing{font-size:14px;line-height:1.5;color:#4b5563;flex-wrap:wrap;gap:4px 12px;font-weight:500}
+.goal-label text{font-size:60px}.door-key{font-size:44px}.delay-overlay text{font-size:38px}
+@media(max-width:900px){.delay-status strong{flex-basis:100%}.delay-countdown{flex:1 1 100%}.delay-count{font-size:24px;text-align:left;min-width:90px}.delay-wait-progress{max-width:180px}.delay-indicator{min-height:180px}}
+@media(max-width:650px){.authors{font-size:16px}.institutions{font-size:14px;line-height:1.85}.correspondence{font-size:13px}.section-intro>p:last-child{font-size:16px}.case-heading{flex-wrap:wrap;gap:4px 10px}h4{font-size:20px}.case-heading span{font-size:13px}figcaption{font-size:15px}.shift-status strong{font-size:16px}.shift-clock{font-size:13px}.shift-indicator p{font-size:14px}.shift-indicator{min-height:94px}.delay-status strong{font-size:16px}.delay-pipeline{font-size:13px}.delay-indicator p{font-size:14px}.delay-timing{font-size:13px}}

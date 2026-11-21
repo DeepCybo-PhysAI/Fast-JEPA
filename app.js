@@ -100,7 +100,7 @@ for (const card of document.querySelectorAll('[data-shift]')) {
     indicator.dataset.phase = kind === 'tworoom' ? 'moving' : after ? 'after' : 'before';
     if (kind === 'cube' || kind === 'reacher') {
       status.textContent = after ? 'GOAL SWITCHED · A → B' : 'Goal A · switch ahead';
-      card.querySelector('.goal-label text').textContent = after ? 'GOAL B · NEW TARGET' : 'GOAL A';
+      card.querySelector('.goal-label text').textContent = after ? 'GOAL B' : 'GOAL A';
     } else if (kind === 'pusht') {
       status.textContent = after ? 'DRIFT REVERSED ↗' : 'External drift ↙';
       card.querySelector('.drift-arrow path').setAttribute('transform', after ? 'rotate(180)' : 'rotate(0)');
@@ -640,6 +640,13 @@ for (const card of document.querySelectorAll('[data-delay]')) {
     indicator.classList.toggle('is-event', !pending && t < plan.ready_step * schedule.dt + .4);
     status.textContent = pending ? 'NEW PLAN PENDING' : 'NEW PLAN ACTIVE';
     count.textContent = pending ? `${left} ms` : 'READY ✓';
+    const totalWait = Math.round((plan.ready_step - plan.observation_step) * schedule.dt * 1000);
+    const elapsedWait = totalWait - left;
+    const waitProgress = card.querySelector('.delay-wait-progress');
+    waitProgress.querySelector('span').style.width = `${totalWait ? elapsedWait / totalWait * 100 : 100}%`;
+    waitProgress.setAttribute('aria-valuemax', totalWait);
+    waitProgress.setAttribute('aria-valuenow', elapsedWait);
+    waitProgress.setAttribute('aria-valuetext', pending ? `${left} milliseconds remaining` : 'New plan ready');
     const source = schedule.sources[Math.min(step, schedule.sources.length - 1)];
     action.textContent = pending
       ? source === 'hold' ? 'Held action continues; environment keeps evolving.' : 'Previous plan continues; new plan is not ready yet.'
@@ -650,7 +657,7 @@ for (const card of document.querySelectorAll('[data-delay]')) {
       : task === 'reacher' ? (step >= 75 ? 'GOAL B' : 'GOAL A')
       : task === 'pusht' ? (step > 50 ? 'REVERSED DRIFT' : 'EXTERNAL DRIFT')
       : 'MOVING DOOR';
-    scene.textContent = `${event} · ${pending ? 'PLAN PENDING' : 'PLAN ACTIVE'}`;
+    scene.textContent = `${event} · ${pending ? 'WAIT' : 'ACTIVE'}`;
     card.querySelector('[data-delay-observed]').textContent = `Observed ${(plan.observation_step * schedule.dt).toFixed(2)} s`;
     card.querySelector('[data-delay-ready]').textContent = `Plan ready ${(plan.ready_step * schedule.dt).toFixed(2)} s`;
     card.querySelector('.delay-track span').style.width = `${Math.min(100, (step - plan.observation_step) / 25 * 100)}%`;

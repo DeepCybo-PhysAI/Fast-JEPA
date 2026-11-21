@@ -14,7 +14,7 @@ video{aspect-ratio:1560/900}
 @media(max-width:650px){.hero .links{gap:9px;margin-top:23px}.hero .links a{padding:8px 14px 7px;font-size:15px;gap:6px}.hero .links svg{width:22px;height:22px}.tldr{font-size:14px;line-height:1.8;margin-top:15px}}
 @media(prefers-reduced-motion:reduce){.hero .links a{transition:none}.hero .links a:hover{transform:none}}
 
-.hero .links .resource-placeholder{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:8px 17px 7px;border:0;border-radius:30px;background:#23263b;color:#fff;font-family:inherit;font-size:16px;line-height:24px;font-weight:500;box-shadow:0 1px 1px #0000001f,0 1px 1px #0000003d;opacity:.55;cursor:default}.hero .links .resource-placeholder svg{width:24px;height:24px;flex:none}@media(max-width:650px){.hero .links .resource-placeholder{padding:8px 14px 7px;font-size:15px;gap:6px}.hero .links .resource-placeholder svg{width:22px;height:22px}}
+.hero .links .resource-placeholder{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:8px 17px 7px;border:0;border-radius:30px;background:#23263b;color:#fff;font-family:inherit;font-size:16px;line-height:24px;font-weight:500;box-shadow:0 1px 1px #0000001f,0 1px 1px #0000003d;opacity:1;cursor:default}.hero .links .resource-placeholder svg{width:24px;height:24px;flex:none}@media(max-width:650px){.hero .links .resource-placeholder{padding:8px 14px 7px;font-size:15px;gap:6px}.hero .links .resource-placeholder svg{width:22px;height:22px}}
 
 /* Give resource actions more presence beneath the project wordmark. */
 .hero .links{gap:14px;margin-top:28px}

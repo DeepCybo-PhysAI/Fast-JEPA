@@ -122,3 +122,544 @@ for (const card of document.querySelectorAll('[data-shift]')) {
     video.requestVideoFrameCallback(onFrame);
   }
 }
+
+const delaySchedules = {
+  "cube": {
+    "dt": 0.05,
+    "plans": [
+      {
+        "observation_step": 0,
+        "ready_step": 16
+      },
+      {
+        "observation_step": 25,
+        "ready_step": 41
+      },
+      {
+        "observation_step": 50,
+        "ready_step": 66
+      },
+      {
+        "observation_step": 75,
+        "ready_step": 91
+      }
+    ],
+    "sources": [
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan"
+    ]
+  },
+  "tworoom": {
+    "dt": 0.1,
+    "plans": [
+      {
+        "observation_step": 0,
+        "ready_step": 8
+      },
+      {
+        "observation_step": 25,
+        "ready_step": 33
+      },
+      {
+        "observation_step": 50,
+        "ready_step": 58
+      },
+      {
+        "observation_step": 75,
+        "ready_step": 83
+      }
+    ],
+    "sources": [
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan"
+    ]
+  },
+  "pusht": {
+    "dt": 0.1,
+    "plans": [
+      {
+        "observation_step": 0,
+        "ready_step": 8
+      },
+      {
+        "observation_step": 25,
+        "ready_step": 33
+      },
+      {
+        "observation_step": 50,
+        "ready_step": 58
+      },
+      {
+        "observation_step": 75,
+        "ready_step": 83
+      }
+    ],
+    "sources": [
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan"
+    ]
+  },
+  "reacher": {
+    "dt": 0.04,
+    "plans": [
+      {
+        "observation_step": 0,
+        "ready_step": 20
+      },
+      {
+        "observation_step": 25,
+        "ready_step": 45
+      },
+      {
+        "observation_step": 50,
+        "ready_step": 70
+      },
+      {
+        "observation_step": 75,
+        "ready_step": 95
+      }
+    ],
+    "sources": [
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "hold",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan",
+      "plan"
+    ]
+  }
+};
+
+// Recorded observation / ready steps define the imposed response delay.
+for (const card of document.querySelectorAll('[data-delay]')) {
+  const task = card.dataset.delay;
+  const schedule = delaySchedules[task];
+  const video = card.querySelector('video');
+  const indicator = card.querySelector('.delay-indicator');
+  const status = card.querySelector('[data-delay-status]');
+  const count = card.querySelector('[data-delay-count]');
+  const action = card.querySelector('[data-delay-action]');
+  const scene = card.querySelector('[data-delay-scene]');
+  function update(mediaTime = video.currentTime) {
+    const step = Math.min(100, Math.floor((mediaTime + .00001) / schedule.dt));
+    let plan = schedule.plans[0];
+    for (const next of schedule.plans) if (next.observation_step <= step) plan = next;
+    const pending = step < plan.ready_step;
+    const left = Math.max(0, Math.round((plan.ready_step - step) * schedule.dt * 1000));
+    const t = step * schedule.dt;
+    indicator.dataset.phase = pending ? 'pending' : 'active';
+    card.classList.toggle('plan-pending', pending);
+    indicator.classList.toggle('is-event', !pending && t < plan.ready_step * schedule.dt + .4);
+    status.textContent = pending ? 'NEW PLAN PENDING' : 'NEW PLAN ACTIVE';
+    count.textContent = pending ? `${left} ms` : 'READY ✓';
+    const source = schedule.sources[Math.min(step, schedule.sources.length - 1)];
+    action.textContent = pending
+      ? source === 'hold' ? 'Held action continues; environment keeps evolving.' : 'Previous plan continues; new plan is not ready yet.'
+      : 'Executing the newly available action plan.';
+    card.querySelector('[data-delay-stage="wait"]').classList.toggle('active', pending);
+    card.querySelector('[data-delay-stage="apply"]').classList.toggle('active', !pending);
+    let event = task === 'cube' ? (step >= 25 ? 'GOAL B' : 'GOAL A')
+      : task === 'reacher' ? (step >= 75 ? 'GOAL B' : 'GOAL A')
+      : task === 'pusht' ? (step > 50 ? 'REVERSED DRIFT' : 'EXTERNAL DRIFT')
+      : 'MOVING DOOR';
+    scene.textContent = `${event} · ${pending ? 'PLAN PENDING' : 'PLAN ACTIVE'}`;
+    card.querySelector('[data-delay-observed]').textContent = `Observed ${(plan.observation_step * schedule.dt).toFixed(2)} s`;
+    card.querySelector('[data-delay-ready]').textContent = `Plan ready ${(plan.ready_step * schedule.dt).toFixed(2)} s`;
+    card.querySelector('.delay-track span').style.width = `${Math.min(100, (step - plan.observation_step) / 25 * 100)}%`;
+    card.querySelector('.delay-track i').style.left = `${(plan.ready_step - plan.observation_step) / 25 * 100}%`;
+  }
+  update();
+  for (const event of ['loadedmetadata','seeked','timeupdate','play','pause']) video.addEventListener(event, () => update());
+  if ('requestVideoFrameCallback' in video) {
+    const onFrame = (_, metadata) => { update(metadata.mediaTime); video.requestVideoFrameCallback(onFrame); };
+    video.requestVideoFrameCallback(onFrame);
+  }
+}

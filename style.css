@@ -21,3 +21,5 @@ video{aspect-ratio:1560/900}
 .hero .links a,.hero .links .resource-placeholder{min-height:50px;min-width:122px;padding:11px 22px;font-size:18px;line-height:26px;gap:9px}
 .hero .links svg,.hero .links .resource-placeholder svg{width:26px;height:26px}
 @media(max-width:650px){.hero .links{gap:9px}.hero .links a,.hero .links .resource-placeholder{min-height:46px;min-width:0;padding:10px 15px;font-size:16px;line-height:24px;gap:6px}.hero .links svg,.hero .links .resource-placeholder svg{width:23px;height:23px}}
+
+.video-play-fallback{display:block;margin:8px auto 0;padding:8px 18px;border:1px solid #23263b;border-radius:24px;background:#23263b;color:#fff;font:inherit;font-size:14px;cursor:pointer}.video-play-fallback[hidden]{display:none}

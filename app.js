@@ -1,5 +1,4 @@
 'use strict';
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const videos = [...document.querySelectorAll('video')];
 const states = new WeakMap();
 
@@ -13,8 +12,7 @@ function suspend(video) {
 
 function synchronize(video) {
   const state = states.get(video);
-  const fullscreen = document.fullscreenElement === video;
-  if (document.hidden || (!state.visible && !fullscreen)) {
+  if (document.hidden) {
     suspend(video);
     return;
   }
@@ -22,7 +20,7 @@ function synchronize(video) {
   state.starting = true;
   video.play().then(() => {
     state.retry.hidden = true;
-    if (document.hidden || (!state.visible && document.fullscreenElement !== video)) suspend(video);
+    if (document.hidden) suspend(video);
   }).catch(error => {
     // Autoplay can be denied on mobile or in embedded browsers. Offer a real
     // user-gesture play action rather than leaving a silent frozen poster.
@@ -34,6 +32,9 @@ for (const video of videos) {
   video.muted = true;
   video.defaultMuted = true;
   video.playsInline = true;
+  video.autoplay = true;
+  video.loop = true;
+  video.preload = 'auto';
   const retry = document.createElement('button');
   retry.type = 'button';
   retry.className = 'video-play-fallback';
@@ -41,7 +42,7 @@ for (const video of videos) {
   retry.setAttribute('aria-label', `Play ${video.getAttribute('aria-label') || 'video'}`);
   retry.hidden = true;
   video.after(retry);
-  const state = { visible: false, wantsPlayback: !reducedMotion.matches, automaticPauses: 0, starting: false, retry };
+  const state = { wantsPlayback: true, automaticPauses: 0, starting: false, retry };
   states.set(video, state);
   retry.addEventListener('click', () => {
     state.wantsPlayback = true;
@@ -61,16 +62,18 @@ for (const video of videos) {
   });
 }
 
-const observer = new IntersectionObserver(entries => {
-  for (const entry of entries) {
-    states.get(entry.target).visible = entry.isIntersecting;
-    synchronize(entry.target);
-  }
-}, { threshold: 0 });
-videos.forEach(video => observer.observe(video));
 const synchronizeAll = () => videos.forEach(synchronize);
 document.addEventListener('visibilitychange', synchronizeAll);
 document.addEventListener('fullscreenchange', synchronizeAll);
 window.addEventListener('pageshow', synchronizeAll);
 window.addEventListener('focus', synchronizeAll);
 window.addEventListener('pagehide', () => videos.forEach(suspend));
+
+// Start every clip immediately, including clips below the fold.
+synchronizeAll();
+// A browser that blocks autoplay can unlock every clip on the first gesture.
+for (const event of ['pointerdown', 'keydown']) {
+  document.addEventListener(event, e => {
+    if (!e.target.closest('video,button,a')) synchronizeAll();
+  });
+}

@@ -77,11 +77,3 @@ If you find our work useful, please consider citing:
   url           = {https://arxiv.org/abs/2611.25927}
 }
 ```
-
-## Contributing and support
-
-For now, contributions focus on documentation corrections and questions about the paper. See [contribution guidance](.github/CONTRIBUTING.md) and [support information](.github/SUPPORT.md). Implementation-related instructions will be added when the code is released.
-
-## License
-
-A public redistribution license has not yet been selected for this repository. No open-source license grant is asserted by this project package. The maintainers should choose a license and verify the rights for included materials before public release; paper and code licensing may differ.

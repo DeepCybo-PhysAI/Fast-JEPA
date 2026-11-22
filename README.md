@@ -32,8 +32,6 @@ This retains intermediate predictions where action construction needs them while
 3. **Refine with lightweight CEM.** Sample alternatives around the proposal and score complete candidates with batched terminal queries. The proposal and best-so-far plan remain eligible.
 4. **Select, execute, and replan.** Select the lowest goal-cost plan, execute a short action prefix, and replan from the next observation.
 
-Both intermediate and terminal predictions use the same forward world model. See the [method figure in vector format](assets/figures/method-overview.pdf) and the [paper](https://arxiv.org/abs/2611.25927) for the full formulation.
-
 ## Results
 
 Main four-task comparison, from Table 1. Values are mean ± standard deviation as reported in the paper; task columns and average success rate (SR) are percentages. These rows are **locally evaluated reference configurations**.

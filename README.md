@@ -23,12 +23,6 @@ Comparing action sequences through recursive world-model rollout can make online
 
 This retains intermediate predictions where action construction needs them while avoiding recursive state rollout during candidate evaluation.
 
-## Release status
-
-**This repository currently contains figures and project documentation. The research implementation, checkpoints, and benchmark assets are not included yet.** The paper is available on [arXiv](https://arxiv.org/abs/2611.25927), and the code will be made publicly available soon; no release date is announced here.
-
-Installation, training, and evaluation commands will be documented with the implementation release. Results below are reported in the paper and have not been reproduced by this documentation repository.
-
 ## Method
 
 <p align="center"><a href="assets/figures/method-overview.pdf"><img src="assets/figures/method-overview.svg" width="100%" alt="Fast-JEPA pipeline: observation and goal encoding, sequential action proposal, light CEM, direct terminal predictions, goal scoring, and execution"></a></p>

@@ -160,7 +160,4 @@ If you find our work useful, please consider citing:
 }
 ```
 
-## Contributing and support
-
-For now, contributions focus on documentation corrections and questions about the paper. See [contribution guidance](.github/CONTRIBUTING.md) and [support information](.github/SUPPORT.md). Implementation-related instructions will be added when the code is released.
 

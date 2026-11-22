@@ -1,21 +1,23 @@
-<p align="center"><img src="assets/logo.png" width="640" alt="Fast-JEPA: fast goal-directed planning"></p>
-<p align="center"><strong>Advancing the Success–Latency Frontier for Latent World Models</strong></p>
 <p align="center">
-Yao Zhang · Bin Yu · Shijie Lian · Haishan Liu · Changti Wu · Yu Wu<sup>†</sup> · Kai Chen<sup>†</sup><br>
-<sub>† Corresponding author</sub>
+  <a href="https://arxiv.org/abs/2611.25927">
+    <img src="assets/badges/paper.svg" alt="Paper: arXiv">
+  </a>
+  <img src="assets/badges/code.svg" alt="Code: coming soon">
 </p>
 
-<div align="center">
-<a href="https://deepcybo-physai.github.io/Fast-JEPA/">
-    <img alt="GitHub" src="https://img.shields.io/badge/Page-DeepCybo%2FFastJEPA-blue?logo=github">
-</a>
-<a href="https://www.alphaxiv.org/abs/2611.25927">
-    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2601.15197-b31b1b.svg">
-</a>
-<a href="https://github.com/DeepCybo-PhysAI/Fast-JEPA/blob/main/LICENSE">
-    <img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg">
-</a>
-</div>
+<p align="center"><img src="assets/logo.png" width="640" alt="Fast-JEPA: fast goal-directed planning"></p>
+<p align="center"><strong>Advancing the Success–Latency Frontier for Latent World Models</strong></p>
+<p align="center">Goal-directed proposals and direct terminal predictions for low-latency visual planning.</p>
+<p align="center">
+  Yao Zhang<sup>1,2,8</sup> · Bin Yu<sup>3,2</sup> · Shijie Lian<sup>4,2</sup> · Haishan Liu<sup>5,2</sup> · Changti Wu<sup>6,2</sup> · Yu Wu<sup>1,†</sup> · Kai Chen<sup>2,7,8,†</sup><br>
+  <sup>1</sup>Wuhan University &nbsp;&nbsp; <sup>2</sup>Zhongguancun Academy<br>
+  <sup>3</sup>Harbin Institute of Technology &nbsp;&nbsp; <sup>4</sup>Huazhong University of Science and Technology<br>
+  <sup>5</sup>Nanjing University &nbsp;&nbsp; <sup>6</sup>East China Normal University<br>
+  <sup>7</sup>Zhongguancun Institute of Artificial Intelligence &nbsp;&nbsp; <sup>8</sup>DeepCybo<br>
+  <sub>† Corresponding author</sub>
+</p>
+
+<p align="center"><a href="https://arxiv.org/abs/2611.25927">Paper</a> · <a href="#method">Method</a> · <a href="#results">Results</a> · <a href="#dynagoal">DynaGoal</a> · <a href="#citation">Citation</a></p>
 
 ---
 
@@ -77,3 +79,11 @@ If you find our work useful, please consider citing:
   url           = {https://arxiv.org/abs/2611.25927}
 }
 ```
+
+## Contributing and support
+
+For now, contributions focus on documentation corrections and questions about the paper. See [contribution guidance](.github/CONTRIBUTING.md) and [support information](.github/SUPPORT.md). Implementation-related instructions will be added when the code is released.
+
+## License
+
+A public redistribution license has not yet been selected for this repository. No open-source license grant is asserted by this project package. The maintainers should choose a license and verify the rights for included materials before public release; paper and code licensing may differ.

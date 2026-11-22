@@ -1,10 +1,3 @@
-<p align="center">
-  <a href="https://arxiv.org/abs/2611.25927">
-    <img src="assets/badges/paper.svg" alt="Paper: arXiv">
-  </a>
-  <img src="assets/badges/code.svg" alt="Code: coming soon">
-</p>
-
 <p align="center"><img src="assets/logo.png" width="640" alt="Fast-JEPA: fast goal-directed planning"></p>
 <p align="center"><strong>Advancing the Success–Latency Frontier for Latent World Models</strong></p>
 <p align="center">Goal-directed proposals and direct terminal predictions for low-latency visual planning.</p>
@@ -13,8 +6,17 @@ Yao Zhang · Bin Yu · Shijie Lian · Haishan Liu · Changti Wu · Yu Wu<sup>†
 <sub>† Corresponding author</sub>
 </p>
 
-<p align="center"><a href="https://arxiv.org/abs/2611.25927">Paper</a> · <a href="#method">Method</a> · <a href="#results">Results</a> · <a href="#dynagoal">DynaGoal</a> · <a href="#citation">Citation</a></p>
-
+<div align="center">
+<a href="https://github.com/DeepCybo-PhysAI/Fast-JEPA">
+    <img alt="GitHub" src="https://img.shields.io/badge/GitHub-DeepCybo%2FFastJEPA-blue?logo=github">
+</a>
+<a href="https://www.alphaxiv.org/abs/2611.25927">
+    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2601.15197-b31b1b.svg">
+</a>
+<a href="https://github.com/DeepCybo-PhysAI/Fast-JEPA/blob/main/LICENSE">
+    <img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg">
+</a>
+</div>
 ---
 
 ## Overview

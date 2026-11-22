@@ -68,26 +68,6 @@ The main evaluation uses 100 episodes per task and three independently trained m
 
 Shift and Deadline values are from Tables 2 and 3. Each protocol covers PushT, Reacher, Cube, and TwoRoom. OOD here refers to changed control conditions and execution constraints, rather than visual-domain or episode disjointness. See Appendix B.2 for case definitions, success criteria, and timing boundaries.
 
-## Repository contents
-
-```text
-Fast-JEPA/
-├── README.md
-├── .github/
-│   ├── CONTRIBUTING.md
-│   └── SUPPORT.md
-└── assets/
-    ├── logo.png
-    ├── badges/
-    │   ├── code.svg
-    │   └── paper.svg
-    └── figures/
-        ├── method-overview.pdf
-        ├── method-overview.svg
-        ├── success-latency.pdf
-        └── success-latency.svg
-```
-
 ## Citation
 
 If you find our work useful, please consider citing:

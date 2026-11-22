@@ -87,6 +87,18 @@ The main evaluation uses 100 episodes per task and three independently trained m
 
 <p align="center"><a href="assets/figures/success-latency.pdf"><img src="assets/figures/success-latency.svg" width="580" alt="Paper Figure 1: success-latency frontier with published and locally evaluated configurations distinguished"></a></p>
 
+### Search-budget comparison
+
+**Figure 5.** Five methods are evaluated with 32 search configurations each. The left panel shows per-task success–latency operating points; the right panel shows the highest observed success within each mean-latency budget.
+
+<p align="center"><a href="assets/figures/search-budget-points.pdf"><img src="assets/figures/search-budget-points.svg" width="49%" alt="Figure 5a: per-task success–latency operating points across search configurations"></a> <a href="assets/figures/search-budget-frontier.pdf"><img src="assets/figures/search-budget-frontier.svg" width="49%" alt="Figure 5b: best observed success within each mean-latency budget"></a></p>
+
+### Predictive refinement in action
+
+**Figure 6.** Matched PushT and Cube cases share the same initial states and goals. Predictive refinement rescues two rollouts, with callouts highlighting alignment and grasp differences. Success is evaluated within 50 steps; asterisks mark retained successful terminal observations, and the rightmost panels show the goals.
+
+<p align="center"><a href="assets/figures/predictive-refinement-cases.pdf"><img src="assets/figures/predictive-refinement-cases.svg" width="100%" alt="Figure 6: matched PushT and Cube rollouts showing how predictive refinement improves alignment and grasping"></a></p>
+
 ## DynaGoal
 
 **DynaGoal** evaluates original-task models under changing control conditions and timing constraints, without benchmark-specific training or fine-tuning.

@@ -36,13 +36,50 @@ This retains intermediate predictions where action construction needs them while
 
 ## Results
 
-Main four-task comparison, from Table 1. Values are mean ± standard deviation as reported in the paper; task columns and average success rate (SR) are percentages. These rows are **locally evaluated reference configurations**.
+Main four-task comparison, from Table 1. Values are mean ± standard deviation as reported in the paper; task columns and average success rate (SR) are percentages. Plan (ms) denotes complete planning latency. These rows are **locally evaluated reference configurations**.
 
-| Method | PushT | Reacher | Cube | TwoRoom | Avg. SR (%) | Planning latency (ms) |
-| :-- | --: | --: | --: | --: | --: | --: |
-| INTACT | 87.33 ± 2.31 | 96.00 ± 0.00 | 100.00 ± 0.00 | 99.00 ± 0.00 | 95.58 ± 0.58 | 26.19 ± 0.22 |
-| INTACT Guarded A | 91.33 ± 1.53 | 97.00 ± 0.00 | 99.67 ± 0.58 | 97.33 ± 0.58 | 96.33 ± 0.38 | 127.09 ± 2.81 |
-| **Fast-JEPA** | **90.00 ± 3.00** | **96.33 ± 1.15** | **100.00 ± 0.00** | **99.67 ± 0.58** | **96.50 ± 0.66** | **10.88 ± 0.04** |
+<table width="100%">
+  <thead>
+    <tr>
+      <th align="center" width="160">Method</th>
+      <th align="center" width="125">PushT</th>
+      <th align="center" width="125">Reacher</th>
+      <th align="center" width="125">Cube</th>
+      <th align="center" width="125">TwoRoom</th>
+      <th align="center" width="125">Avg.&nbsp;SR&nbsp;(%)</th>
+      <th align="center" width="150">Plan&nbsp;(ms)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">INTACT</td>
+      <td align="center">87.33±2.31</td>
+      <td align="center">96.00±0.00</td>
+      <td align="center">100.00±0.00</td>
+      <td align="center">99.00±0.00</td>
+      <td align="center">95.58±0.58</td>
+      <td align="center">26.19±0.22</td>
+    </tr>
+    <tr>
+      <td align="center">INTACT&nbsp;Guarded&nbsp;A</td>
+      <td align="center">91.33±1.53</td>
+      <td align="center">97.00±0.00</td>
+      <td align="center">99.67±0.58</td>
+      <td align="center">97.33±0.58</td>
+      <td align="center">96.33±0.38</td>
+      <td align="center">127.09±2.81</td>
+    </tr>
+    <tr>
+      <td align="center"><strong>Fast&#8209;JEPA</strong></td>
+      <td align="center"><strong>90.00±3.00</strong></td>
+      <td align="center"><strong>96.33±1.15</strong></td>
+      <td align="center"><strong>100.00±0.00</strong></td>
+      <td align="center"><strong>99.67±0.58</strong></td>
+      <td align="center"><strong>96.50±0.66</strong></td>
+      <td align="center"><strong>10.88±0.04</strong></td>
+    </tr>
+  </tbody>
+</table>
 
 Fast-JEPA reaches **96.50%** average success at **10.88 ms** mean complete planning latency, a **2.41×** speedup over the locally evaluated INTACT configuration (26.19 / 10.88).
 
@@ -54,10 +91,30 @@ The main evaluation uses 100 episodes per task and three independently trained m
 
 **DynaGoal** evaluates original-task models under changing control conditions and timing constraints, without benchmark-specific training or fine-tuning.
 
-| Protocol | Evaluation condition | Fast-JEPA avg. SR (%) | Planning latency (ms) |
-| :--: | :--: | :--: | :--: |
-| Shift | Changing goals or environment geometry | 73.83 ± 4.16 | 13.42 ± 0.11 |
-| Deadline | Joint planning and execution time budget | 87.67 ± 0.38 | 13.75 ± 0.03 |
+<table width="100%">
+  <thead>
+    <tr>
+      <th align="center" width="125">Protocol</th>
+      <th align="center" width="430">Evaluation&nbsp;condition</th>
+      <th align="center" width="235">Fast-JEPA&nbsp;avg.&nbsp;SR&nbsp;(%)</th>
+      <th align="center" width="145">Planning&nbsp;latency&nbsp;(ms)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">Shift</td>
+      <td align="center">Changing goals or environment geometry</td>
+      <td align="center">73.83±4.16</td>
+      <td align="center">13.42±0.11</td>
+    </tr>
+    <tr>
+      <td align="center">Deadline</td>
+      <td align="center">Joint planning and execution time budget</td>
+      <td align="center">87.67±0.38</td>
+      <td align="center">13.75±0.03</td>
+    </tr>
+  </tbody>
+</table>
 
 Fast-JEPA results from Tables 2 and 3. Avg. SR denotes average success rate. Each protocol covers PushT, Reacher, Cube, and TwoRoom. OOD here refers to changed control conditions and execution constraints, rather than visual-domain or episode disjointness. See Appendix B.2 for case definitions, success criteria, and timing boundaries.
 

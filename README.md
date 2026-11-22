@@ -7,8 +7,8 @@ Yao Zhang · Bin Yu · Shijie Lian · Haishan Liu · Changti Wu · Yu Wu<sup>†
 </p>
 
 <div align="center">
-<a href="https://github.com/DeepCybo-PhysAI/Fast-JEPA">
-    <img alt="GitHub" src="https://img.shields.io/badge/GitHub-DeepCybo%2FFastJEPA-blue?logo=github">
+<a href="https://deepcybo-physai.github.io/Fast-JEPA/">
+    <img alt="GitHub" src="https://img.shields.io/badge/Page-blue?logo=github">
 </a>
 <a href="https://www.alphaxiv.org/abs/2611.25927">
     <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2601.15197-b31b1b.svg">

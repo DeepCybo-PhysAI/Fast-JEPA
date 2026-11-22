@@ -54,12 +54,12 @@ The main evaluation uses 100 episodes per task and three independently trained m
 
 **DynaGoal** evaluates original-task models under changing control conditions and timing constraints, without benchmark-specific training or fine-tuning.
 
-| Protocol | Condition | Avg. SR (%) | Plan time (ms) |
+| Protocol | Evaluation condition | Fast-JEPA avg. SR (%) | Planning latency (ms) |
 | :--: | :--: | :--: | :--: |
-| Shift | Changing goals / geometry | 73.83 ± 4.16 | 13.42 ± 0.11 |
-| Deadline | Planning + execution deadline | 87.67 ± 0.38 | 13.75 ± 0.03 |
+| Shift | Changing goals or environment geometry | 73.83 ± 4.16 | 13.42 ± 0.11 |
+| Deadline | Joint planning and execution time budget | 87.67 ± 0.38 | 13.75 ± 0.03 |
 
-Fast-JEPA results from Tables 2 and 3. Avg. SR denotes average success rate; plan time denotes planning latency. Each protocol covers PushT, Reacher, Cube, and TwoRoom. OOD here refers to changed control conditions and execution constraints, rather than visual-domain or episode disjointness. See Appendix B.2 for case definitions, success criteria, and timing boundaries.
+Fast-JEPA results from Tables 2 and 3. Avg. SR denotes average success rate. Each protocol covers PushT, Reacher, Cube, and TwoRoom. OOD here refers to changed control conditions and execution constraints, rather than visual-domain or episode disjointness. See Appendix B.2 for case definitions, success criteria, and timing boundaries.
 
 ### DynaGoal-Delay
 

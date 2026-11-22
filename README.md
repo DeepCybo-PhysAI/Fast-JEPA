@@ -58,9 +58,14 @@ The main evaluation uses 100 episodes per task and three independently trained m
 | :-- | :-- | --: | --: |
 | Shift | Goals or environment geometry change during control | 73.83 ± 4.16 | 13.42 ± 0.11 |
 | Deadline | Goal completion must fit planning + execution budgets | 87.67 ± 0.38 | 13.75 ± 0.03 |
-| Delay | Controlled response delays of 0, 300, 500, and 800 ms | See paper curves | See paper |
 
 Shift and Deadline values are from Tables 2 and 3. Each protocol covers PushT, Reacher, Cube, and TwoRoom. OOD here refers to changed control conditions and execution constraints, rather than visual-domain or episode disjointness. See Appendix B.2 for case definitions, success criteria, and timing boundaries.
+
+### DynaGoal-Delay
+
+Success rates across PushT, Reacher, Cube, and TwoRoom under controlled total response delays of **0, 300, 500, and 800 ms**, with 100 episodes per task at each delay level.
+
+<p align="center"><a href="assets/figures/dynamic-response-delay.pdf"><img src="assets/figures/dynamic-response-delay.svg" width="1000" alt="DynaGoal-Delay results: success-rate curves for INTACT, INTACT Guarded A, Fast-JEPA, LeWM, and Fast-LeWM across four tasks at response delays of 0, 300, 500, and 800 milliseconds"></a></p>
 
 ## Citation
 

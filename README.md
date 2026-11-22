@@ -17,6 +17,15 @@ Yao Zhang · Bin Yu · Shijie Lian · Haishan Liu · Changti Wu · Yu Wu<sup>†
 </a>
 </div>
 
+<p align="center">
+  <a href="#overview">Why Fast-JEPA?</a> &nbsp;&middot;&nbsp;
+  <a href="#method">Method</a> &nbsp;&middot;&nbsp;
+  <a href="#results">Results</a> &nbsp;&middot;&nbsp;
+  <a href="#search-budget-comparison">Search Budgets</a> &nbsp;&middot;&nbsp;
+  <a href="#dynagoal">DynaGoal</a> &nbsp;&middot;&nbsp;
+  <a href="#citation">Citation</a>
+</p>
+
 ---
 
 ## Overview

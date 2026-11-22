@@ -1,6 +1,5 @@
 <p align="center"><img src="assets/logo.png" width="640" alt="Fast-JEPA: fast goal-directed planning"></p>
 <p align="center"><strong>Advancing the Success–Latency Frontier for Latent World Models</strong></p>
-<p align="center">Goal-directed proposals and direct terminal predictions for low-latency visual planning.</p>
 <p align="center">
 Yao Zhang · Bin Yu · Shijie Lian · Haishan Liu · Changti Wu · Yu Wu<sup>†</sup> · Kai Chen<sup>†</sup><br>
 <sub>† Corresponding author</sub>

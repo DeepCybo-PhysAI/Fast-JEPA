@@ -40,9 +40,9 @@
 
 ## 🎉 News & Roadmap
 
-- [x] 📄 **Paper & results released!** Check out our [paper](https://arxiv.org/abs/2611.25927) and [results](#results).
-- [x] 🚀 **Code is now open source!** Get started with [installation](#installation), [training](#training), and [evaluation](#evaluation).
-- [ ] 👀 **…**
+- ✅ 📄 **Paper & results released!** Check out our [paper](https://arxiv.org/abs/2611.25927) and [results](#results).
+- ✅ 🚀 **Code is now open source!** Get started with [installation](#installation), [training](#training), and [evaluation](#evaluation).
+- 🟨 👀 **…**
 
 ## Overview
 

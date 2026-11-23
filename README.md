@@ -17,13 +17,24 @@
     <img alt="GitHub" src="https://img.shields.io/badge/Page-DeepCybo%2FFastJEPA-blue?logo=github">
 </a>
 <a href="https://www.alphaxiv.org/abs/2611.25927">
-    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2601.15197-b31b1b.svg">
+    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2611.25927-b31b1b.svg">
 </a>
 <a href="https://github.com/DeepCybo-PhysAI/Fast-JEPA/blob/main/LICENSE">
     <img alt="License" src="https://img.shields.io/badge/License-MIT-blue.svg">
 </a>
 </div>
 
+<br>
+
+<p align="center">
+  <a href="#overview">Why Fast-JEPA?</a> &nbsp;&middot;&nbsp;
+  <a href="#installation">Installation</a> &nbsp;&middot;&nbsp;
+  <a href="#training">Training</a> &nbsp;&middot;&nbsp;
+  <a href="#evaluation">Evaluation</a> &nbsp;&middot;&nbsp;
+  <a href="#method">Method</a> &nbsp;&middot;&nbsp;
+  <a href="#results">Results</a> &nbsp;&middot;&nbsp;
+  <a href="#dynagoal">DynaGoal</a>
+</p>
 
 ---
 
@@ -145,8 +156,6 @@ Success rates across PushT, Reacher, Cube, and TwoRoom under controlled total re
 <p align="center"><a href="assets/figures/dynamic-response-delay.pdf"><img src="assets/figures/dynamic-response-delay.svg" width="1000" alt="DynaGoal-Delay results: success-rate curves for INTACT, INTACT Guarded A, Fast-JEPA, LeWM, and Fast-LeWM across four tasks at response delays of 0, 300, 500, and 800 milliseconds"></a></p>
 
 ---
-
-<p align="center"><a href="#installation">Installation</a> &nbsp;&middot;&nbsp; <a href="#data-preparation">Data</a> &nbsp;&middot;&nbsp; <a href="#training">Training</a> &nbsp;&middot;&nbsp; <a href="#evaluation">Evaluation</a> &nbsp;&middot;&nbsp; <a href="#four-task-reproduction">Reproduction</a> &nbsp;&middot;&nbsp; <a href="#dynagoal-reproduction">DynaGoal protocols</a></p>
 
 ## Installation
 
@@ -313,9 +322,9 @@ not the same measurement as batch-one planning latency.
 
 </details>
 
-## Four-task reproduction
+### Four-task evaluation
 
-After training all twelve checkpoints:
+Evaluate all four tasks across training seeds 0, 42, and 3072:
 
 ```bash
 bash scripts/evaluate_all.sh --checkpoint-root "$STABLEWM_HOME/checkpoints" --dry-run
@@ -332,22 +341,23 @@ mean, sample SD and sample variance across the three training seeds (`ddof=1`).
 Missing cells are an error. Full settings are in
 [reproducibility/SETTING.json](reproducibility/SETTING.json).
 
-## DynaGoal reproduction
+## DynaGoal evaluation
 
-This distribution reproduces the **Fast-JEPA rows** of Tables 1–3. Other methods
-and component ablations are not included. All three tables reuse the twelve
-original-task checkpoints trained above, with no DynaGoal fine-tuning.
+Evaluate Fast-JEPA on changing goals and geometry (**Shift**), execution-time
+budgets (**Deadline**), and controlled response delays (**Delay**). Use the same
+twelve checkpoints as the static tasks; no additional training is needed.
+
+Run the static, Shift, and Deadline evaluations together:
 
 ```bash
 bash scripts/reproduce_tables.sh "$STABLEWM_HOME/checkpoints" "$PWD/outputs/tables"
 ```
 
-This runs 1,200 episodes for Table 1, 1,200 for Table 2 (Shift), and 1,200 for
-Table 3 (Deadline). Each table writes taskwise and Macro mean, sample SD and
-sample variance across training seeds 0/42/3072. Existing result directories are
-never silently reused or overwritten.
+Each suite evaluates 100 episodes per task and checkpoint, totaling 1,200
+episodes. Results include per-task and macro statistics across training seeds.
+Choose a new output directory for each run.
 
-Run either DynaGoal table separately:
+Run Shift or Deadline individually:
 
 ```bash
 bash scripts/evaluate_dynagoal.sh --subset shift \
@@ -356,17 +366,16 @@ bash scripts/evaluate_dynagoal.sh --subset deadline \
   --checkpoint-root "$STABLEWM_HOME/checkpoints" --output "$PWD/outputs/table3"
 ```
 
-DynaGoal-Delay uses the same Shift dynamics at imposed total response delays
-0/300/500/800 ms, with its own frozen evaluation windows 0/42/3072 (100 cases
-per window). It is separate from the measured delay in Table 2:
+Evaluate Delay at **0, 300, 500, and 800 ms** using the Shift dynamics and
+three fixed evaluation windows (0, 42, and 3072), with 100 cases per window:
 
 ```bash
 bash scripts/evaluate_dynagoal.sh --subset delay \
   --checkpoint-root "$STABLEWM_HOME/checkpoints" --output "$PWD/outputs/delay"
 ```
 
-The command above evaluates all three training seeds and all three Delay
-windows, totaling 14,400 episodes.
+The full Delay sweep covers four tasks, three training seeds, three evaluation
+windows, and four delay levels: 14,400 episodes in total.
 
 <details>
 <summary>Protocol details: Delay aggregation</summary>
@@ -380,17 +389,18 @@ within each trained model, then computes mean and sample SD across models.
 <details>
 <summary>Protocol details</summary>
 
-Fig.4 uses the same 100-step Shift dynamics and 25-step feedback, CEM64×2/top8,
-CUDA Graph, encoding cache and terminal-WM pruning. The imposed delay sets
+Shift and Delay use 100-step episodes with observations every 25 steps,
+CEM64×2/top8, CUDA Graph, encoding cache, and terminal-WM pruning. The imposed delay sets
 the total response interval; buffered/held actions continue during the wait.
 
-`dynagoal/settings.json` fixes all eight conditions. The 100 original cases per
-condition are stored in `dynagoal/cases/`, with checked hashes; they must not be
-resampled using Table 1's evaluation seed 42. Cases and conditions were selected
-through exploratory comparisons and are frozen development cases, not an
-independent held-out evaluation. Their full case objects are preserved.
+Conditions are defined in `dynagoal/settings.json`. Fixed case manifests in
+`dynagoal/cases/` are verified by checksum; use these manifests rather than
+resampling from the static evaluation seed. They are development cases selected
+through exploratory comparisons, not an independent held-out test set.
+The scripts evaluate Fast-JEPA; baseline methods and component ablations are
+not included.
 
-| Condition | Original evaluator setting |
+| Condition | Setting |
 |---|---|
 | Shift PushT | Physical block drift 2 pixels/s, reversal after step 50; success throughout final 25 steps |
 | Shift Reacher | Target switch at step 75; success strictly before and after switch |
@@ -408,23 +418,19 @@ Deadline runs the static environments. A first native goal hit succeeds only
 when execution duration plus cumulative **actual measured** decision time is
 within the deadline. Online timing includes preprocessing, complete planning,
 CPU output and inverse normalization; simulation, rendering, loading, warm-up
-and CUDA Graph initialization are excluded. This differs from Table 1's
-independent fixed-input timing, which excludes preprocessing and inverse
+and CUDA Graph initialization are excluded. The standalone latency benchmark excludes preprocessing and inverse
 normalization. Raw episodes, timings, source/checkpoint/case hashes, warm-up and
 native-loop checks are saved. The native-loop gate requires exact executed
 actions and success against the original environment evaluation loop.
 
-Historical details needed for faithful reproduction: PushT's `reverse_drift`
-applies a disturbance to the physical block, rather than moving the goal.
-All four Deadline tasks use a 50-step cap. The archived Fast-JEPA Reacher
-traces used 100 steps; the current 50-step cap preserves the deadline success
-outcomes, while mean planning latency may differ slightly.
+PushT's `reverse_drift` acts on the physical block, not the goal.
+All four Deadline tasks use a 50-step cap. Published Reacher timing results
+used a 100-step cap; the current cap retains the deadline success outcomes,
+but mean planning latency can differ.
 
-Newly trained checkpoints are accepted directly. Evaluation records whether
-their hashes match the original paper checkpoints listed in
-`dynagoal/checkpoint_hashes.json`. Measured latency and time-sensitive outcomes
-can vary with hardware and load; use the locked environment and reference
-hardware for closest agreement.
+Evaluation accepts newly trained checkpoints and records their hashes against
+`dynagoal/checkpoint_hashes.json`. Latency and time-sensitive outcomes depend
+on the hardware, system load, and numerical environment.
 
 </details>
 

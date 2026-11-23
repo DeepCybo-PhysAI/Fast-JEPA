@@ -377,36 +377,6 @@ within each trained model, then computes mean and sample SD across models.
 
 </details>
 
-### Figure 4: Fast-JEPA Delay curves
-
-Fig.4 (DynaGoal-Delay) uses a historical selection of trained weights and
-windows per task, rather than this full-grid aggregate. Its exact Fast-JEPA
-results have a separate entry point (no plotting):
-
-```bash
-bash scripts/evaluate_delay_figure.sh --checkpoint-root "$STABLEWM_HOME/checkpoints" \
-  --output "$PWD/outputs/paper_delay"
-```
-
-The settings are recorded in `dynagoal/settings.json`. This command evaluates
-Fast-JEPA and exports `PAPER_CURVES.json`, `PAPER_CURVES.csv`, and
-`PAPER_RESULTS.md`. Per-episode actions, outcomes, planning times and resolved
-configurations are saved with the results.
-
-The exact Fig.4 Fast-JEPA settings are:
-
-| Task | Training seed(s) | Evaluation window start | Episodes per checkpoint per delay |
-|---|---|---:|---:|
-| PushT | 0 | 42 | 100 |
-| Reacher | 42 | 0 | 100 |
-| Cube | 42 | 0 | 100 |
-| TwoRoom | 0/42/3072 | 0 | 100 |
-
-The four response delays are 0/300/500/800 ms. Each selected checkpoint
-runs 400 episodes, for 2,400 episodes in total. TwoRoom averages the three
-training seeds and reports sample SD; the other tasks use one selected
-checkpoint each. The fixed cases and condition profiles are included.
-
 <details>
 <summary>Protocol details</summary>
 

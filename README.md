@@ -227,12 +227,19 @@ Pinned revisions and archive SHA256 values are in `data/manifests/`. The prepare
 supports resuming downloads, verifies the archives, extracts HDF5 and converts
 PushT to Lance. Reserve space for archives and the prepared data together.
 
-| Task | Public source | Prepared paths under `datasets/` |
-|---|---|---|
-| PushT | https://huggingface.co/datasets/quentinll/lewm-pusht | `pusht_expert_train.h5`, `pusht_expert_train.lance/` |
-| Cube | https://huggingface.co/datasets/quentinll/lewm-cube | `ogbench/cube_single_expert.h5` |
-| Reacher | https://huggingface.co/datasets/quentinll/lewm-reacher | `reacher.h5` |
-| TwoRoom | https://huggingface.co/datasets/quentinll/lewm-tworooms | `tworoom.h5` |
+<table width="100%">
+  <thead><tr>
+    <th align="center" width="160">Task</th>
+    <th align="center" width="400">Dataset</th>
+    <th align="center" width="280">Prepared format</th>
+  </tr></thead>
+  <tbody>
+    <tr><td align="center">PushT</td><td align="center"><a href="https://huggingface.co/datasets/quentinll/lewm-pusht">lewm-pusht</a></td><td align="center">HDF5 + Lance</td></tr>
+    <tr><td align="center">Cube</td><td align="center"><a href="https://huggingface.co/datasets/quentinll/lewm-cube">lewm-cube</a></td><td align="center">HDF5</td></tr>
+    <tr><td align="center">Reacher</td><td align="center"><a href="https://huggingface.co/datasets/quentinll/lewm-reacher">lewm-reacher</a></td><td align="center">HDF5</td></tr>
+    <tr><td align="center">TwoRoom</td><td align="center"><a href="https://huggingface.co/datasets/quentinll/lewm-tworooms">lewm-tworooms</a></td><td align="center">HDF5</td></tr>
+  </tbody>
+</table>
 
 Both `STABLEWM_HOME` and optional `LOCAL_DATASET_DIR` refer to the **parent** of
 `datasets/`, not the dataset directory itself:
@@ -311,17 +318,6 @@ PYTHONPATH=inference .venv/bin/python inference/benchmark_paired.py \
   --mode fast_guarded --output outputs/pusht_b1_latency.json
 ```
 
-<details>
-<summary>Protocol details</summary>
-
-The timer uses 5 warmups and 20 synchronized batch-one measurements. It includes
-Actor, CEM and CPU output copy; it excludes loading, preprocessing, simulation
-and CUDA Graph initialization. Graph setup is recorded separately. Changing input
-or candidate shapes may require another capture. Batched evaluation wall time is
-not the same measurement as batch-one planning latency.
-
-</details>
-
 ### Four-task evaluation
 
 Evaluate all four tasks across training seeds 0, 42, and 3072:
@@ -376,63 +372,6 @@ bash scripts/evaluate_dynagoal.sh --subset delay \
 
 The full Delay sweep covers four tasks, three training seeds, three evaluation
 windows, and four delay levels: 14,400 episodes in total.
-
-<details>
-<summary>Protocol details: Delay aggregation</summary>
-
-Window 0 and window 42 overlap in 58 integer
-cases; they are not independent cohorts. Aggregation first averages windows
-within each trained model, then computes mean and sample SD across models.
-
-</details>
-
-<details>
-<summary>Protocol details</summary>
-
-Shift and Delay use 100-step episodes with observations every 25 steps,
-CEM64×2/top8, CUDA Graph, encoding cache, and terminal-WM pruning. The imposed delay sets
-the total response interval; buffered/held actions continue during the wait.
-
-Conditions are defined in `dynagoal/settings.json`. Fixed case manifests in
-`dynagoal/cases/` are verified by checksum; use these manifests rather than
-resampling from the static evaluation seed. They are development cases selected
-through exploratory comparisons, not an independent held-out test set.
-The scripts evaluate Fast-JEPA; baseline methods and component ablations are
-not included.
-
-| Condition | Setting |
-|---|---|
-| Shift PushT | Physical block drift 2 pixels/s, reversal after step 50; success throughout final 25 steps |
-| Shift Reacher | Target switch at step 75; success strictly before and after switch |
-| Shift Cube | Target switch at step 25; success in both stages |
-| Shift TwoRoom | Sliding doorway amplitude 8 pixels, period 20 s, phase 0; fixed physical goal, updated goal image; success throughout final 25 steps |
-| Deadline PushT / Reacher / Cube / TwoRoom | 2.50 / 1.20 / 1.25 / 2.50 s |
-
-Shift runs 100 primitive steps, with observations every 25 steps. During measured
-planning delay the environment advances in native ticks using buffered actions,
-holding the last action when the queue is empty. A new plan replaces the queue
-once ready. Delay uses this same scheduler but replaces the total response
-interval with the imposed value; it does not add delay to compute time.
-
-Deadline runs the static environments. A first native goal hit succeeds only
-when execution duration plus cumulative **actual measured** decision time is
-within the deadline. Online timing includes preprocessing, complete planning,
-CPU output and inverse normalization; simulation, rendering, loading, warm-up
-and CUDA Graph initialization are excluded. The standalone latency benchmark excludes preprocessing and inverse
-normalization. Raw episodes, timings, source/checkpoint/case hashes, warm-up and
-native-loop checks are saved. The native-loop gate requires exact executed
-actions and success against the original environment evaluation loop.
-
-PushT's `reverse_drift` acts on the physical block, not the goal.
-All four Deadline tasks use a 50-step cap. Published Reacher timing results
-used a 100-step cap; the current cap retains the deadline success outcomes,
-but mean planning latency can differ.
-
-Evaluation accepts newly trained checkpoints and records their hashes against
-`dynagoal/checkpoint_hashes.json`. Latency and time-sensitive outcomes depend
-on the hardware, system load, and numerical environment.
-
-</details>
 
 ## Acknowledgments and license
 

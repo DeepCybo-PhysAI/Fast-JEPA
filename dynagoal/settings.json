@@ -1,0 +1,211 @@
+{
+  "name": "DynaGoal",
+  "version": 1,
+  "training_seeds": [
+    0,
+    42,
+    3072
+  ],
+  "episodes_per_condition_per_checkpoint": 100,
+  "configs": {
+    "dynamic_tworoom": {
+      "start": 100,
+      "steps": 100,
+      "door_amplitude_px": 8,
+      "door_period_s": 20,
+      "door_phase": 0,
+      "success": "hold_final25_within16px",
+      "task": "tworoom",
+      "feedback_steps": 25,
+      "case_file": "cases/dynamic_tworoom.json",
+      "case_sha256": "6ea7e5e0ce610789d5e4a0f01594e1b937456f2bdc77fe929a9cf11e58aad601",
+      "native_step_seconds": 0.1
+    },
+    "dynamic_pusht": {
+      "start": 1,
+      "steps": 100,
+      "profile": {
+        "name": "reverse_drift",
+        "drift": 2.0,
+        "reverse_at": 50
+      },
+      "success": "hold_final25",
+      "task": "pusht",
+      "feedback_steps": 25,
+      "case_file": "cases/dynamic_pusht.json",
+      "case_sha256": "bfb217eb2c63b33114bcf2bd2be3d3a506c690982f777b654a5ff333f50514dc",
+      "native_step_seconds": 0.1
+    },
+    "dynamic_cube": {
+      "start": 10000,
+      "steps": 100,
+      "profile": {
+        "name": "switch25",
+        "switches": [
+          [
+            25,
+            1
+          ]
+        ]
+      },
+      "success": "all_goal_stages",
+      "task": "cube",
+      "feedback_steps": 25,
+      "case_file": "cases/dynamic_cube.json",
+      "case_sha256": "3a291f4ec291a96d4f0f0d5f3f388bac69337f7d18577a6602dbc7c54adb86f3",
+      "native_step_seconds": 0.05
+    },
+    "dynamic_reacher": {
+      "start": 1000,
+      "steps": 100,
+      "profile": {
+        "name": "late75",
+        "switches": [
+          [
+            75,
+            1
+          ]
+        ]
+      },
+      "success": "both_goal_stages_excluding_switch_boundary",
+      "task": "reacher",
+      "feedback_steps": 25,
+      "case_file": "cases/dynamic_reacher.json",
+      "case_sha256": "e7560a8e8a562dc2cbc106c79bf1f248a1801b7889eeeb0ea5e81889fccc4afd",
+      "native_step_seconds": 0.04
+    },
+    "deadline_tworoom": {
+      "start": 100000,
+      "steps": 50,
+      "budget_seconds": 2.5,
+      "task": "tworoom",
+      "feedback_steps": 25,
+      "case_file": "cases/deadline_tworoom.json",
+      "case_sha256": "49b4f913b2a93f5ddec1a4e86fef66d97457e359c613b24c1f6298b8b124d73f",
+      "native_step_seconds": 0.1
+    },
+    "deadline_pusht": {
+      "start": 100,
+      "steps": 50,
+      "budget_seconds": 2.5,
+      "task": "pusht",
+      "feedback_steps": 25,
+      "case_file": "cases/deadline_pusht.json",
+      "case_sha256": "927d0bae827ead914d51841ae4cbee5ae6ecf6783a2731c3f0616d15d65f5690",
+      "native_step_seconds": 0.1
+    },
+    "deadline_cube": {
+      "start": 10000,
+      "steps": 50,
+      "budget_seconds": 1.25,
+      "task": "cube",
+      "feedback_steps": 25,
+      "case_file": "cases/deadline_cube.json",
+      "case_sha256": "6ef45bfd9e5b49a019660856561159e8d8be85fad3ab353f8fe1aaaebfa2d56d",
+      "native_step_seconds": 0.05
+    },
+    "deadline_reacher": {
+      "start": 14001778,
+      "steps": 50,
+      "budget_seconds": 1.2,
+      "task": "reacher",
+      "feedback_steps": 25,
+      "case_file": "cases/deadline_reacher.json",
+      "case_sha256": "7c66d604b52866447c943ef45e559ce1147f8a21a2334269e42700f43d90c332",
+      "native_step_seconds": 0.04
+    }
+  },
+  "delay_ms": [
+    0,
+    300,
+    500,
+    800
+  ],
+  "selection_provenance": "Frozen exploratory development case sets; not an independent held-out benchmark.",
+  "timing": "Measured warmed complete online decision: preprocessing, Actor/CEM, CPU output and inverse normalization. Simulation/rendering and graph initialization excluded.",
+  "reacher_deadline_cap_note": "All Deadline tasks use a50-step cap. Archived Fast-JEPA Reacher traces used100; the50-step cap preserves deadline success outcomes while mean planning latency may differ slightly.",
+  "pusht_drift_note": "Historical reverse_drift displaces the physical pushed block at 2 pixels/s and reverses after tick50; the goal remains fixed. Preserve this behavior rather than interpreting the manuscript wording as moving the target.",
+  "delay_evaluation_seeds": [
+    0,
+    42,
+    3072
+  ],
+  "delay_cases": {
+    "pusht_e0": {
+      "case_file": "cases/delay_pusht_e0.json",
+      "case_sha256": "30700b7c6e6f51591b3723d76176c8b8f20edd165e0d38e8188582c1c57781b3"
+    },
+    "pusht_e42": {
+      "case_file": "cases/delay_pusht_e42.json",
+      "case_sha256": "ef882f8f39d794b880a02303835359af535c750cf1180de9bad6b68e85b5a1e2"
+    },
+    "pusht_e3072": {
+      "case_file": "cases/delay_pusht_e3072.json",
+      "case_sha256": "664fa4ce8c06f18927f1a8868525e9c5ccf2290ea11d93f8367dc74f5adcb8ea"
+    },
+    "reacher_e0": {
+      "case_file": "cases/delay_reacher_e0.json",
+      "case_sha256": "1dcfe84a7b7d8bd9f491c3dfb9c1e8b2ee4a4a885ef179c8f6baae92044d0e45"
+    },
+    "reacher_e42": {
+      "case_file": "cases/delay_reacher_e42.json",
+      "case_sha256": "1f5f604ab0d45f8b04240f3a56f900e2813e5fb13471a6877d0fa61b1b36670f"
+    },
+    "reacher_e3072": {
+      "case_file": "cases/delay_reacher_e3072.json",
+      "case_sha256": "760301a7c960f16a632b28c2d17e00b1e7624424440e9490587ad4ce8261642c"
+    },
+    "cube_e0": {
+      "case_file": "cases/delay_cube_e0.json",
+      "case_sha256": "fdae494198a96ddfbec375ffbb8a4ce527e8c571702338c5e5044d825f22e1ce"
+    },
+    "cube_e42": {
+      "case_file": "cases/delay_cube_e42.json",
+      "case_sha256": "2f353b10cf085899cfd52df1af7bf6f02b4b33f50de48f52eb371ce780d4f23d"
+    },
+    "cube_e3072": {
+      "case_file": "cases/delay_cube_e3072.json",
+      "case_sha256": "512e7f400e662131179a3cfaf5e4e1fc997ba1bf70f332ffca0abbebfe0fcb60"
+    },
+    "tworoom_e0": {
+      "case_file": "cases/delay_tworoom_e0.json",
+      "case_sha256": "61d68813579e106161e27ba90e6bc9cd805813dc7eb010865d06c1a55af7409f"
+    },
+    "tworoom_e42": {
+      "case_file": "cases/delay_tworoom_e42.json",
+      "case_sha256": "7cb11d41526ef55512a3bc7248e1ae6de1ab687196025103d59a9a8f93d6e784"
+    },
+    "tworoom_e3072": {
+      "case_file": "cases/delay_tworoom_e3072.json",
+      "case_sha256": "51f8dfa20db409ffa0e03486731fe0672af4ae08eb2fa0a1f9b23cec241a8c49"
+    }
+  },
+  "paper_delay_curves": {
+    "pusht": {
+      "training_seeds": [
+        0
+      ],
+      "evaluation_seed": 42
+    },
+    "reacher": {
+      "training_seeds": [
+        42
+      ],
+      "evaluation_seed": 0
+    },
+    "cube": {
+      "training_seeds": [
+        42
+      ],
+      "evaluation_seed": 0
+    },
+    "tworoom": {
+      "training_seeds": [
+        0,
+        42,
+        3072
+      ],
+      "evaluation_seed": 0
+    }
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "task": "pusht",
+    "training_seed": 0,
+    "sha256": "3e03393423895c3c5072a8b34d670fd1f203534c66277584ba1b08605332134e"
+  },
+  {
+    "task": "pusht",
+    "training_seed": 42,
+    "sha256": "148b74c98dd47c9441bc2adec7c442339701134601c5cfbd5731d7079db9da4f"
+  },
+  {
+    "task": "cube",
+    "training_seed": 0,
+    "sha256": "95effcade27ee13ea57ef0635881ee4fcd7019ffc766d4f9f869ce3e35e82a62"
+  },
+  {
+    "task": "cube",
+    "training_seed": 42,
+    "sha256": "8d9159ad37b8862dda61947ce977f821eeed83c60addc7618672f4857487f6c0"
+  },
+  {
+    "task": "reacher",
+    "training_seed": 0,
+    "sha256": "5dc7fb28e08294a90e6cc075aecbd255d4ad8b906360ec27973775e197375983"
+  },
+  {
+    "task": "reacher",
+    "training_seed": 42,
+    "sha256": "b6e68df3d1a9d644192e85d49ecef4f6cc3ca22a1938649d04444291bba077d3"
+  },
+  {
+    "task": "tworoom",
+    "training_seed": 0,
+    "sha256": "6c0416716edb3a20cb877e2612a699ac58499fb1fcba9d1bf7fdffd356a12928"
+  },
+  {
+    "task": "tworoom",
+    "training_seed": 42,
+    "sha256": "0f6d5a9cc4615e94053325ee0090bcf7f0ce30261f88e7019afcefd9754e041f"
+  },
+  {
+    "task": "pusht",
+    "training_seed": 3072,
+    "sha256": "aa9545c43a240198cbcac77f7f6c87240f24584dd36b9eb501191989a21aca5d"
+  },
+  {
+    "task": "cube",
+    "training_seed": 3072,
+    "sha256": "202ca0947a5903585c2cd5b4d3966e9f8a9e2762246aa2cd6cb4d575e3d35795"
+  },
+  {
+    "task": "reacher",
+    "training_seed": 3072,
+    "sha256": "4d5713a07af418c3760efb94edc4ba1c4a3db2742ac002eff9b9cdc068963644"
+  },
+  {
+    "task": "tworoom",
+    "training_seed": 3072,
+    "sha256": "8b082556d087c5aae790ef23ee003b3cfe238b68d2cf5db2646191dd7649d318"
+  }
+]

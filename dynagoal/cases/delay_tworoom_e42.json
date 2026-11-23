@@ -1,0 +1,1806 @@
+{
+  "task": "tworoom",
+  "evaluation_seed": 42,
+  "cases": [
+    {
+      "case_id": "tworoom_integer_42",
+      "episode": 1027,
+      "start": 36,
+      "env_seed": 42,
+      "plan_seed": 42,
+      "requested_seed": 42,
+      "direction": [
+        -0.810919147029477,
+        0.5851582153409327
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        42
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_43",
+      "episode": 5289,
+      "start": 42,
+      "env_seed": 43,
+      "plan_seed": 43,
+      "requested_seed": 43,
+      "direction": [
+        0.7569169007389491,
+        -0.6535111363823449
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        43
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_44",
+      "episode": 6894,
+      "start": 34,
+      "env_seed": 44,
+      "plan_seed": 44,
+      "requested_seed": 44,
+      "direction": [
+        0.29879352415612453,
+        0.9543177824615674
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        44
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_45",
+      "episode": 9251,
+      "start": 21,
+      "env_seed": 45,
+      "plan_seed": 45,
+      "requested_seed": 45,
+      "direction": [
+        -0.977213487614291,
+        0.21225880340921988
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        45
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_46",
+      "episode": 5286,
+      "start": 16,
+      "env_seed": 46,
+      "plan_seed": 46,
+      "requested_seed": 46,
+      "direction": [
+        0.976106019131892,
+        -0.21729482141664297
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        46
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_47",
+      "episode": 1141,
+      "start": 38,
+      "env_seed": 47,
+      "plan_seed": 47,
+      "requested_seed": 47,
+      "direction": [
+        0.05123214950860461,
+        -0.998686771143349
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        47
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_48",
+      "episode": 1414,
+      "start": 12,
+      "env_seed": 48,
+      "plan_seed": 48,
+      "requested_seed": 48,
+      "direction": [
+        0.9899466392902119,
+        0.14144133539391895
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        48
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_49",
+      "episode": 452,
+      "start": 8,
+      "env_seed": 49,
+      "plan_seed": 49,
+      "requested_seed": 49,
+      "direction": [
+        0.985403611010848,
+        0.17023431912156156
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        49
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_50",
+      "episode": 7968,
+      "start": 21,
+      "env_seed": 50,
+      "plan_seed": 50,
+      "requested_seed": 50,
+      "direction": [
+        -0.5806680221848334,
+        0.8141404350675342
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        50
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_51",
+      "episode": 4195,
+      "start": 50,
+      "env_seed": 51,
+      "plan_seed": 51,
+      "requested_seed": 51,
+      "direction": [
+        -0.9917811208217729,
+        0.12794611514816615
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        51
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_52",
+      "episode": 9667,
+      "start": 25,
+      "env_seed": 52,
+      "plan_seed": 52,
+      "requested_seed": 52,
+      "direction": [
+        0.9670413632156639,
+        -0.25461932729074266
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        52
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_53",
+      "episode": 7686,
+      "start": 26,
+      "env_seed": 53,
+      "plan_seed": 53,
+      "requested_seed": 53,
+      "direction": [
+        -0.6706947283100765,
+        0.7417334975697625
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        53
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_54",
+      "episode": 3433,
+      "start": 2,
+      "env_seed": 54,
+      "plan_seed": 54,
+      "requested_seed": 54,
+      "direction": [
+        -0.1565199558890191,
+        0.9876747963821388
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        54
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_55",
+      "episode": 9662,
+      "start": 43,
+      "env_seed": 55,
+      "plan_seed": 55,
+      "requested_seed": 55,
+      "direction": [
+        -0.9947888417227884,
+        -0.10195665934029557
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        55
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_56",
+      "episode": 4050,
+      "start": 30,
+      "env_seed": 56,
+      "plan_seed": 56,
+      "requested_seed": 56,
+      "direction": [
+        0.17710671058658645,
+        0.9841916546411066
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        56
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_57",
+      "episode": 757,
+      "start": 44,
+      "env_seed": 57,
+      "plan_seed": 57,
+      "requested_seed": 57,
+      "direction": [
+        0.2834725524774514,
+        0.958980350159438
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        57
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_58",
+      "episode": 5360,
+      "start": 32,
+      "env_seed": 58,
+      "plan_seed": 58,
+      "requested_seed": 58,
+      "direction": [
+        0.043554137327154636,
+        -0.999051068325182
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        58
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_59",
+      "episode": 8049,
+      "start": 48,
+      "env_seed": 59,
+      "plan_seed": 59,
+      "requested_seed": 59,
+      "direction": [
+        0.640395308952436,
+        0.768045472789023
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        59
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_60",
+      "episode": 1983,
+      "start": 12,
+      "env_seed": 60,
+      "plan_seed": 60,
+      "requested_seed": 60,
+      "direction": [
+        -0.40732657890119306,
+        0.913282572986395
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        60
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_61",
+      "episode": 4548,
+      "start": 18,
+      "env_seed": 61,
+      "plan_seed": 61,
+      "requested_seed": 61,
+      "direction": [
+        0.5331076414816185,
+        -0.8460474233717081
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        61
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_62",
+      "episode": 4796,
+      "start": 25,
+      "env_seed": 62,
+      "plan_seed": 62,
+      "requested_seed": 62,
+      "direction": [
+        -0.9529103671036623,
+        -0.30325209358941574
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        62
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_63",
+      "episode": 4909,
+      "start": 40,
+      "env_seed": 63,
+      "plan_seed": 63,
+      "requested_seed": 63,
+      "direction": [
+        0.8136291487053331,
+        -0.5813842175162954
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        63
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_64",
+      "episode": 5360,
+      "start": 47,
+      "env_seed": 64,
+      "plan_seed": 64,
+      "requested_seed": 64,
+      "direction": [
+        -0.12407992505848883,
+        -0.9922722268598874
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        64
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_65",
+      "episode": 1999,
+      "start": 38,
+      "env_seed": 65,
+      "plan_seed": 65,
+      "requested_seed": 65,
+      "direction": [
+        0.15562400394271741,
+        0.9878163642078607
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        65
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_66",
+      "episode": 9431,
+      "start": 30,
+      "env_seed": 66,
+      "plan_seed": 66,
+      "requested_seed": 66,
+      "direction": [
+        -0.7386577685345969,
+        -0.6740806338884762
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        66
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_67",
+      "episode": 7994,
+      "start": 35,
+      "env_seed": 67,
+      "plan_seed": 67,
+      "requested_seed": 67,
+      "direction": [
+        0.1686987505992441,
+        -0.9856676577560279
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        67
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_68",
+      "episode": 5122,
+      "start": 23,
+      "env_seed": 68,
+      "plan_seed": 68,
+      "requested_seed": 68,
+      "direction": [
+        0.7717437826573151,
+        0.635933592389786
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        68
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_69",
+      "episode": 662,
+      "start": 49,
+      "env_seed": 69,
+      "plan_seed": 69,
+      "requested_seed": 69,
+      "direction": [
+        0.12619540110697475,
+        0.9920054035837959
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        69
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_70",
+      "episode": 6684,
+      "start": 8,
+      "env_seed": 70,
+      "plan_seed": 70,
+      "requested_seed": 70,
+      "direction": [
+        -0.7448470932735173,
+        0.6672351966450752
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        70
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_71",
+      "episode": 9563,
+      "start": 44,
+      "env_seed": 71,
+      "plan_seed": 71,
+      "requested_seed": 71,
+      "direction": [
+        0.9781628213783858,
+        -0.20784007042213037
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        71
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_72",
+      "episode": 9563,
+      "start": 44,
+      "env_seed": 72,
+      "plan_seed": 72,
+      "requested_seed": 72,
+      "direction": [
+        -0.048258563469056735,
+        0.9988348767698808
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        72
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_73",
+      "episode": 8307,
+      "start": 14,
+      "env_seed": 73,
+      "plan_seed": 73,
+      "requested_seed": 73,
+      "direction": [
+        0.8978319108733038,
+        -0.4403383469760404
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        73
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_74",
+      "episode": 2239,
+      "start": 47,
+      "env_seed": 74,
+      "plan_seed": 74,
+      "requested_seed": 74,
+      "direction": [
+        0.2698870951833746,
+        0.962891975173477
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        74
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_75",
+      "episode": 6848,
+      "start": 40,
+      "env_seed": 75,
+      "plan_seed": 75,
+      "requested_seed": 75,
+      "direction": [
+        0.6984108692045626,
+        0.7156970432920116
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        75
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_76",
+      "episode": 5875,
+      "start": 31,
+      "env_seed": 76,
+      "plan_seed": 76,
+      "requested_seed": 76,
+      "direction": [
+        0.8725724050684818,
+        0.4884847980367509
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        76
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_77",
+      "episode": 710,
+      "start": 46,
+      "env_seed": 77,
+      "plan_seed": 77,
+      "requested_seed": 77,
+      "direction": [
+        -0.21024194839358623,
+        0.9776493866083427
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        77
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_78",
+      "episode": 7407,
+      "start": 10,
+      "env_seed": 78,
+      "plan_seed": 78,
+      "requested_seed": 78,
+      "direction": [
+        0.719680421201657,
+        -0.6943054740811176
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        78
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_79",
+      "episode": 1192,
+      "start": 50,
+      "env_seed": 79,
+      "plan_seed": 79,
+      "requested_seed": 79,
+      "direction": [
+        -0.8728579619894828,
+        0.48797436222773694
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        79
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_80",
+      "episode": 9119,
+      "start": 29,
+      "env_seed": 80,
+      "plan_seed": 80,
+      "requested_seed": 80,
+      "direction": [
+        -0.578185917836162,
+        -0.8159050462008154
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        80
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_81",
+      "episode": 696,
+      "start": 39,
+      "env_seed": 81,
+      "plan_seed": 81,
+      "requested_seed": 81,
+      "direction": [
+        0.7330918569271478,
+        -0.6801296415442473
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        81
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_82",
+      "episode": 7278,
+      "start": 50,
+      "env_seed": 82,
+      "plan_seed": 82,
+      "requested_seed": 82,
+      "direction": [
+        0.6796482870814017,
+        0.7335381420671434
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        82
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_83",
+      "episode": 7590,
+      "start": 46,
+      "env_seed": 83,
+      "plan_seed": 83,
+      "requested_seed": 83,
+      "direction": [
+        -0.995359421015885,
+        -0.09622693487232092
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        83
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_84",
+      "episode": 6756,
+      "start": 27,
+      "env_seed": 84,
+      "plan_seed": 84,
+      "requested_seed": 84,
+      "direction": [
+        -0.1514829242863086,
+        -0.9884598745774502
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        84
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_85",
+      "episode": 7257,
+      "start": 25,
+      "env_seed": 85,
+      "plan_seed": 85,
+      "requested_seed": 85,
+      "direction": [
+        -0.7671048393747748,
+        -0.6415217575482542
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        85
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_86",
+      "episode": 9611,
+      "start": 48,
+      "env_seed": 86,
+      "plan_seed": 86,
+      "requested_seed": 86,
+      "direction": [
+        -0.354870285840873,
+        0.9349155471095865
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        86
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_87",
+      "episode": 6312,
+      "start": 10,
+      "env_seed": 87,
+      "plan_seed": 87,
+      "requested_seed": 87,
+      "direction": [
+        -0.26151651863325337,
+        0.9651990004563531
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        87
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_88",
+      "episode": 5255,
+      "start": 7,
+      "env_seed": 88,
+      "plan_seed": 88,
+      "requested_seed": 88,
+      "direction": [
+        -0.4546309180150757,
+        -0.8906799247680222
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        88
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_89",
+      "episode": 8665,
+      "start": 5,
+      "env_seed": 89,
+      "plan_seed": 89,
+      "requested_seed": 89,
+      "direction": [
+        -0.24689002086512069,
+        0.9690435065554178
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        89
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_90",
+      "episode": 6759,
+      "start": 40,
+      "env_seed": 90,
+      "plan_seed": 90,
+      "requested_seed": 90,
+      "direction": [
+        -0.9748644843085028,
+        -0.22279864728924403
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        90
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_91",
+      "episode": 7424,
+      "start": 32,
+      "env_seed": 91,
+      "plan_seed": 91,
+      "requested_seed": 91,
+      "direction": [
+        0.4833624119575406,
+        -0.8754203440100012
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        91
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_92",
+      "episode": 4822,
+      "start": 50,
+      "env_seed": 92,
+      "plan_seed": 92,
+      "requested_seed": 92,
+      "direction": [
+        -0.5998381031504795,
+        -0.8001213970447452
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        92
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_93",
+      "episode": 9578,
+      "start": 50,
+      "env_seed": 93,
+      "plan_seed": 93,
+      "requested_seed": 93,
+      "direction": [
+        -0.5675224722078896,
+        0.8233579073155518
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        93
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_94",
+      "episode": 499,
+      "start": 17,
+      "env_seed": 94,
+      "plan_seed": 94,
+      "requested_seed": 94,
+      "direction": [
+        0.6124361873915573,
+        -0.7905200290778807
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        94
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_95",
+      "episode": 4845,
+      "start": 14,
+      "env_seed": 95,
+      "plan_seed": 95,
+      "requested_seed": 95,
+      "direction": [
+        -0.11728980259073256,
+        0.9930977304415849
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        95
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_96",
+      "episode": 8405,
+      "start": 39,
+      "env_seed": 96,
+      "plan_seed": 96,
+      "requested_seed": 96,
+      "direction": [
+        0.8678536178339028,
+        -0.4968199855205167
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        96
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_97",
+      "episode": 1580,
+      "start": 36,
+      "env_seed": 97,
+      "plan_seed": 97,
+      "requested_seed": 97,
+      "direction": [
+        0.9387280547351372,
+        -0.34465872867691233
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        97
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_98",
+      "episode": 3672,
+      "start": 49,
+      "env_seed": 98,
+      "plan_seed": 98,
+      "requested_seed": 98,
+      "direction": [
+        -0.9117989494985577,
+        0.41063691467441976
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        98
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_99",
+      "episode": 9611,
+      "start": 47,
+      "env_seed": 99,
+      "plan_seed": 99,
+      "requested_seed": 99,
+      "direction": [
+        -0.9941364577090058,
+        0.10813280470694364
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        99
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_100",
+      "episode": 7790,
+      "start": 17,
+      "env_seed": 100,
+      "plan_seed": 100,
+      "requested_seed": 100,
+      "direction": [
+        0.34789561451031326,
+        0.9375332748252146
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        100
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_101",
+      "episode": 3433,
+      "start": 10,
+      "env_seed": 101,
+      "plan_seed": 101,
+      "requested_seed": 101,
+      "direction": [
+        -0.9587403670429556,
+        0.2842831486429309
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        101
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_102",
+      "episode": 4783,
+      "start": 19,
+      "env_seed": 102,
+      "plan_seed": 102,
+      "requested_seed": 102,
+      "direction": [
+        0.9148098871202556,
+        0.4038847241813256
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        102
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_103",
+      "episode": 5789,
+      "start": 37,
+      "env_seed": 103,
+      "plan_seed": 103,
+      "requested_seed": 103,
+      "direction": [
+        -0.8921120687787948,
+        0.4518141838623692
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        103
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_104",
+      "episode": 7152,
+      "start": 16,
+      "env_seed": 104,
+      "plan_seed": 104,
+      "requested_seed": 104,
+      "direction": [
+        0.6689577822539623,
+        -0.7433004006200052
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        104
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_105",
+      "episode": 3070,
+      "start": 39,
+      "env_seed": 105,
+      "plan_seed": 105,
+      "requested_seed": 105,
+      "direction": [
+        0.5320512769037492,
+        0.8467121345209894
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        105
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_106",
+      "episode": 5766,
+      "start": 46,
+      "env_seed": 106,
+      "plan_seed": 106,
+      "requested_seed": 106,
+      "direction": [
+        0.5501940322361637,
+        0.8350368416373682
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        106
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_107",
+      "episode": 1187,
+      "start": 37,
+      "env_seed": 107,
+      "plan_seed": 107,
+      "requested_seed": 107,
+      "direction": [
+        -0.9997264789157556,
+        -0.02338733321063407
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        107
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_108",
+      "episode": 35,
+      "start": 22,
+      "env_seed": 108,
+      "plan_seed": 108,
+      "requested_seed": 108,
+      "direction": [
+        0.025506330715782906,
+        0.9996746606238538
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        108
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_109",
+      "episode": 5800,
+      "start": 32,
+      "env_seed": 109,
+      "plan_seed": 109,
+      "requested_seed": 109,
+      "direction": [
+        0.999999744123861,
+        0.0007153685850297918
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        109
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_110",
+      "episode": 6210,
+      "start": 50,
+      "env_seed": 110,
+      "plan_seed": 110,
+      "requested_seed": 110,
+      "direction": [
+        0.10921360421490796,
+        0.9940183039835783
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        110
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_111",
+      "episode": 5042,
+      "start": 32,
+      "env_seed": 111,
+      "plan_seed": 111,
+      "requested_seed": 111,
+      "direction": [
+        -0.9889641284073634,
+        0.14815516434962384
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        111
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_112",
+      "episode": 2148,
+      "start": 12,
+      "env_seed": 112,
+      "plan_seed": 112,
+      "requested_seed": 112,
+      "direction": [
+        0.8519085837751531,
+        -0.5236905239645004
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        112
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_113",
+      "episode": 3143,
+      "start": 12,
+      "env_seed": 113,
+      "plan_seed": 113,
+      "requested_seed": 113,
+      "direction": [
+        0.9937404490390334,
+        -0.11171356204015936
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        113
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_114",
+      "episode": 1798,
+      "start": 39,
+      "env_seed": 114,
+      "plan_seed": 114,
+      "requested_seed": 114,
+      "direction": [
+        0.2317119133016595,
+        -0.9727844515791175
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        114
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_115",
+      "episode": 6464,
+      "start": 46,
+      "env_seed": 115,
+      "plan_seed": 115,
+      "requested_seed": 115,
+      "direction": [
+        -0.937948976962595,
+        -0.34677329282230096
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        115
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_116",
+      "episode": 2613,
+      "start": 27,
+      "env_seed": 116,
+      "plan_seed": 116,
+      "requested_seed": 116,
+      "direction": [
+        0.03349627988438491,
+        0.9994388421678972
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        116
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_117",
+      "episode": 1474,
+      "start": 41,
+      "env_seed": 117,
+      "plan_seed": 117,
+      "requested_seed": 117,
+      "direction": [
+        0.5571092595154953,
+        -0.8304392048561391
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        117
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_118",
+      "episode": 4240,
+      "start": 47,
+      "env_seed": 118,
+      "plan_seed": 118,
+      "requested_seed": 118,
+      "direction": [
+        0.9718128148440233,
+        0.23575379722273043
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        118
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_119",
+      "episode": 4603,
+      "start": 48,
+      "env_seed": 119,
+      "plan_seed": 119,
+      "requested_seed": 119,
+      "direction": [
+        0.9070181606296194,
+        -0.42109150583698784
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        119
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_120",
+      "episode": 3546,
+      "start": 33,
+      "env_seed": 120,
+      "plan_seed": 120,
+      "requested_seed": 120,
+      "direction": [
+        0.9993384156365362,
+        0.03636936943441938
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        120
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_121",
+      "episode": 3010,
+      "start": 49,
+      "env_seed": 121,
+      "plan_seed": 121,
+      "requested_seed": 121,
+      "direction": [
+        -0.9120295970094099,
+        0.4101243886662357
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        121
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_122",
+      "episode": 8685,
+      "start": 33,
+      "env_seed": 122,
+      "plan_seed": 122,
+      "requested_seed": 122,
+      "direction": [
+        -0.9989203479960532,
+        0.04645576777369966
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        122
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_123",
+      "episode": 136,
+      "start": 31,
+      "env_seed": 123,
+      "plan_seed": 123,
+      "requested_seed": 123,
+      "direction": [
+        -0.2745886009024832,
+        0.9615618026182284
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        123
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_124",
+      "episode": 8869,
+      "start": 33,
+      "env_seed": 124,
+      "plan_seed": 124,
+      "requested_seed": 124,
+      "direction": [
+        -0.46196205375083027,
+        -0.8868996904353473
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        124
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_125",
+      "episode": 4854,
+      "start": 11,
+      "env_seed": 125,
+      "plan_seed": 125,
+      "requested_seed": 125,
+      "direction": [
+        -0.9973705764084433,
+        -0.07247022364178
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        125
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_126",
+      "episode": 3330,
+      "start": 26,
+      "env_seed": 126,
+      "plan_seed": 126,
+      "requested_seed": 126,
+      "direction": [
+        0.04942359070154695,
+        0.998777907586149
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        126
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_127",
+      "episode": 5342,
+      "start": 0,
+      "env_seed": 127,
+      "plan_seed": 127,
+      "requested_seed": 127,
+      "direction": [
+        -0.9700835901953342,
+        0.24277114332994937
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        127
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_128",
+      "episode": 7249,
+      "start": 41,
+      "env_seed": 128,
+      "plan_seed": 128,
+      "requested_seed": 128,
+      "direction": [
+        -0.8915698772593393,
+        -0.4528831570767087
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        128
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_129",
+      "episode": 5794,
+      "start": 6,
+      "env_seed": 129,
+      "plan_seed": 129,
+      "requested_seed": 129,
+      "direction": [
+        -0.981574359705621,
+        -0.191080549424844
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        129
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_130",
+      "episode": 7352,
+      "start": 9,
+      "env_seed": 130,
+      "plan_seed": 130,
+      "requested_seed": 130,
+      "direction": [
+        0.7851750500547399,
+        -0.6192738818741969
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        130
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_131",
+      "episode": 4981,
+      "start": 36,
+      "env_seed": 131,
+      "plan_seed": 131,
+      "requested_seed": 131,
+      "direction": [
+        0.8988622744572139,
+        -0.43823123069631215
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        131
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_132",
+      "episode": 8623,
+      "start": 47,
+      "env_seed": 132,
+      "plan_seed": 132,
+      "requested_seed": 132,
+      "direction": [
+        0.13261700920229502,
+        -0.9911673566407634
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        132
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_133",
+      "episode": 5517,
+      "start": 50,
+      "env_seed": 133,
+      "plan_seed": 133,
+      "requested_seed": 133,
+      "direction": [
+        0.08761755939539058,
+        -0.9961541865020672
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        133
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_134",
+      "episode": 7994,
+      "start": 50,
+      "env_seed": 134,
+      "plan_seed": 134,
+      "requested_seed": 134,
+      "direction": [
+        -0.09717497117656317,
+        0.9952673133268439
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        134
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_135",
+      "episode": 5048,
+      "start": 36,
+      "env_seed": 135,
+      "plan_seed": 135,
+      "requested_seed": 135,
+      "direction": [
+        0.9024309702903122,
+        -0.43083447385380585
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        135
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_136",
+      "episode": 9902,
+      "start": 2,
+      "env_seed": 136,
+      "plan_seed": 136,
+      "requested_seed": 136,
+      "direction": [
+        -0.7483844214834597,
+        0.6632652242360273
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        136
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_137",
+      "episode": 5175,
+      "start": 10,
+      "env_seed": 137,
+      "plan_seed": 137,
+      "requested_seed": 137,
+      "direction": [
+        -0.7596263498240833,
+        -0.6503597532542581
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        137
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_138",
+      "episode": 6657,
+      "start": 2,
+      "env_seed": 138,
+      "plan_seed": 138,
+      "requested_seed": 138,
+      "direction": [
+        -0.42448954493048474,
+        -0.9054328391684884
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        138
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_139",
+      "episode": 4783,
+      "start": 19,
+      "env_seed": 139,
+      "plan_seed": 139,
+      "requested_seed": 139,
+      "direction": [
+        -0.9848550398684539,
+        -0.1733797867275944
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        139
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_140",
+      "episode": 6455,
+      "start": 46,
+      "env_seed": 140,
+      "plan_seed": 140,
+      "requested_seed": 140,
+      "direction": [
+        0.8359734147720486,
+        -0.548769942502649
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        140
+      ]
+    },
+    {
+      "case_id": "tworoom_integer_141",
+      "episode": 4240,
+      "start": 46,
+      "env_seed": 141,
+      "plan_seed": 141,
+      "requested_seed": 141,
+      "direction": [
+        0.9999206097944299,
+        -0.012600559842146026
+      ],
+      "phase": 0.0,
+      "cohort": "confirmation",
+      "sampling": "Each exact integer seeds its complete case independently; same eligible pool and physical margins as previous evaluator; no episode uniqueness across integer seeds",
+      "actual_reset_seed": [
+        141
+      ]
+    }
+  ]
+}

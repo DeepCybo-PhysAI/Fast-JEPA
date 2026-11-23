@@ -1,0 +1,16 @@
+{
+  "repo": "quentinll/lewm-tworooms",
+  "revision": "6903a2de048b13819d812da0b4dd661290bc01e4",
+  "file": {
+    "type": "file",
+    "oid": "11f454189ed821d5de0efac54eabc22e30da9b9a",
+    "size": 3425937909,
+    "lfs": {
+      "oid": "494b1a02f0765cd9a0d9daf1786c419ced1009977fc45d01e3158932f8d080ca",
+      "size": 3425937909,
+      "pointerSize": 135
+    },
+    "xetHash": "4f00b4434080d38f8686abedaff65da23c7289124c2698aa8afc12a5ee216e96",
+    "path": "tworoom.tar.zst"
+  }
+}

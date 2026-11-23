@@ -1,0 +1,42 @@
+{
+  "training_seeds": [
+    0,
+    42,
+    3072
+  ],
+  "evaluation_seed": 42,
+  "episodes_per_task_per_weight": 100,
+  "tasks": [
+    "pusht",
+    "cube",
+    "reacher",
+    "tworoom"
+  ],
+  "method": "Fast-JEPA",
+  "solver": {
+    "num_samples": 64,
+    "n_steps": 2,
+    "topk": 8,
+    "var_scale": 0.25,
+    "cuda_graph_mode": "all",
+    "cache_encoding": true,
+    "prune_actor_terminal": true
+  },
+  "environment": {
+    "horizon_chunks": 5,
+    "receding_horizon_chunks": 5,
+    "primitive_steps_per_chunk": 5,
+    "real_feedback_interval_primitive_steps": 25,
+    "goal_offset_steps": 25,
+    "budget_primitive_steps": 50
+  },
+  "statistics": {
+    "across_training_seeds": "sample SD and variance, ddof=1",
+    "macro": "first mean four tasks within each training seed, then aggregate training seeds"
+  },
+  "protocol_notes": [
+    "Training uses a seeded 90/10 random split at the clip level rather than the episode level.",
+    "Evaluation uses the original benchmark data-sampling protocol; episode-disjoint generalization is outside this protocol."
+  ],
+  "timing": "Warmed synchronized batch-one complete planning, 5 warmups/20 repeats; loading/preprocessing/simulation/graph setup excluded and recorded separately."
+}

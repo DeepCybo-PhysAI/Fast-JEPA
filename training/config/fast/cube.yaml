@@ -1,0 +1,122 @@
+wandb:
+  enabled: false
+  config:
+    entity: null
+    project: fast-jepa
+    name: ${output_model_name}
+    id: ${output_model_name}
+    resume: allow
+    log_model: false
+data:
+  task_name: cube
+  dataset:
+    name: ogbench/cube_single_expert.h5
+    num_steps: ${num_frames}
+    frameskip: 5
+    keys_to_load:
+    - pixels
+    - action
+    - observation
+    keys_to_cache:
+    - action
+    - observation
+    keys_to_merge:
+      proprio: proprio
+model:
+  _target_: hybrid_jepa.JEPA
+  intent_mode: goal_displacement
+  predict_residual: false
+  encoder:
+    _target_: stable_pretraining.backbone.utils.vit_hf
+    size: tiny
+    patch_size: 14
+    image_size: ${img_size}
+    pretrained: false
+    use_mask_token: false
+  predictor:
+    _target_: module.ARPredictor
+    num_frames: ${history_size}
+    input_dim: ${embed_dim}
+    hidden_dim: ${embed_dim}
+    output_dim: ${embed_dim}
+    depth: 6
+    heads: 16
+    mlp_dim: 2048
+    dim_head: 64
+    dropout: 0.1
+    emb_dropout: 0.0
+  action_encoder:
+    _target_: module.Embedder
+    input_dim: 25
+    emb_dim: ${embed_dim}
+  intent_actor:
+    _target_: module.IntentActionActor
+    embed_dim: ${embed_dim}
+    action_emb_dim: ${embed_dim}
+    action_dim: 25
+    hidden_dim: 1024
+    depth: 3
+    dropout: 0.0
+    min_log_std: -5.0
+    max_log_std: 2.0
+  projector:
+    _target_: module.MLP
+    input_dim: ${embed_dim}
+    output_dim: ${embed_dim}
+    hidden_dim: 2048
+    norm_fn:
+      _target_: torch.nn.BatchNorm1d
+      _partial_: true
+  pred_proj:
+    _target_: module.MLP
+    input_dim: ${embed_dim}
+    output_dim: ${embed_dim}
+    hidden_dim: 2048
+    norm_fn:
+      _target_: torch.nn.BatchNorm1d
+      _partial_: true
+  world_model_type: ${world_model_type}
+  fast_horizon: ${fast_horizon}
+  fast_target_stop_gradient: ${fast_target_stop_gradient}
+output_model_name: fast_cube_s3072_e1
+seed: 3072
+img_size: 224
+embed_dim: 192
+history_size: 3
+num_frames: 8
+train_split: 0.9
+init_weights_path: null
+sdpa_backend: math
+log_interval_steps: 100
+trainer:
+  max_epochs: 1
+  devices: 1
+  accelerator: gpu
+  precision: bf16-mixed
+  gradient_clip_val: 1.0
+  limit_val_batches: 1
+loader:
+  batch_size: 256
+  num_workers: 6
+  persistent_workers: true
+  prefetch_factor: 3
+  pin_memory: true
+optimizer:
+  type: AdamW
+  lr: 0.0005
+  weight_decay: 0.001
+loss:
+  forward_weight: 1.0
+  sigreg:
+    weight: 0.02
+    kwargs:
+      knots: 17
+      num_proj: 1024
+  intent:
+    local_start: 0
+    goal_start: 0
+    local_weight: 0.1
+    goal_weight: 0.05
+world_model_type: fast
+fast_horizon: 5
+fast_target_stop_gradient: false

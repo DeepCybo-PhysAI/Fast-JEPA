@@ -38,6 +38,13 @@
 
 ---
 
+## Roadmap
+
+- [x] Release training and evaluation code.
+- [ ] Release pretrained checkpoints for all four tasks.
+- [ ] Add a quick-start inference example.
+- [ ] Add baseline and ablation evaluation scripts.
+
 ## Overview
 
 Comparing action sequences through recursive world-model rollout can make online planning expensive. **Fast-JEPA** reorganizes predictive computation: it constructs a goal-directed reference plan, then compares complete candidate sequences through direct terminal predictions under a shared visual-goal objective.

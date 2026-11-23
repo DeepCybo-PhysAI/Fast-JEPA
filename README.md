@@ -38,12 +38,11 @@
 
 ---
 
-## Roadmap
+## 🎉 News & Roadmap
 
-- [x] Release training and evaluation code.
-- [ ] Release pretrained checkpoints for all four tasks.
-- [ ] Add a quick-start inference example.
-- [ ] Add baseline and ablation evaluation scripts.
+- [x] 📄 **Paper & results released!** Check out our [paper](https://arxiv.org/abs/2611.25927) and [results](#results).
+- [x] 🚀 **Code is now open source!** Get started with [installation](#installation), [training](#training), and [evaluation](#evaluation).
+- [ ] 👀 **…**
 
 ## Overview
 

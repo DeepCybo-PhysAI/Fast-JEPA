@@ -379,15 +379,17 @@ bash scripts/evaluate_dynagoal.sh --subset delay \
 The full Delay sweep covers four tasks, three training seeds, three evaluation
 windows, and four delay levels: 14,400 episodes in total.
 
-## Acknowledgments and license
+## Acknowledgments
 
-Fast-JEPA builds on [INTACT-JEPA](https://github.com/zju3dv/INTACT-JEPA),
-[Fast-LeWorldModel](https://github.com/Yuntian-Gao/Fast-LeWorldModel), and
-[LeWM](https://github.com/lucas-maes/le-wm). We thank their authors for
-releasing their code.
+Fast-JEPA builds upon the following open-source projects. We thank their authors for their valuable contributions and for making their code publicly available.
 
-The project is released under the [MIT License](LICENSE). Upstream copyright
-and license notices are included in the same file.
+- [INTACT-JEPA](https://github.com/zju3dv/INTACT-JEPA)
+- [Fast-LeWorldModel](https://github.com/Yuntian-Gao/Fast-LeWorldModel)
+- [LeWM](https://github.com/lucas-maes/le-wm)
+
+## License
+
+Fast-JEPA is released under the [MIT License](LICENSE). Copyright and license notices for the upstream code are retained in the same file.
 
 ## Citation
 
